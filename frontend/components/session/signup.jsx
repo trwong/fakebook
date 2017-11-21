@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Signup extends React.Component {
-  consturctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       email: "",
@@ -9,6 +9,7 @@ class Signup extends React.Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleInput(type) {
