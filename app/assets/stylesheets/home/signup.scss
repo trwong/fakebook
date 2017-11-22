@@ -1,2 +1,115 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica;
+  padding-top: 20px;
+}
+
+.home-container-content {
+  width: 980;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
 .home-aside {
+  width: 565px;
+}
+
+// aside styling (left)
+
+.home-aside-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 42px 0 24px;
+  width: 100%;
+  line-height: 36px;
+}
+
+.home-aside-item {
+  font-size: 15px;
+  color: #666;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.home-aside-item > img {
+  margin-right: 20px;
+  width: 48px;
+}
+
+.home-aside-item > p {
+  display: inline;
+  text-align: center;
+}
+
+.home-aside-item strong {
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+  margin-right: 10px;
+}
+
+// sign up styling (right side)
+
+.sign-up-container {
+  width: 399px;
+}
+
+.sign-up-container > h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sign-up-container > a {
+  border-radius: 5px;
+  // width: 152px;
+  // height: 23px;
+  // font-size: 19px;
+  // font-weight: bold;
+}
+
+.sign-up-container > input {
+  height: 39px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border:1px solid rgb(189,199,215);
+  font-size: 18px;
+  padding: 0 0 0 10px;
+}
+
+.input-full-width {
+  width: 100%;
+}
+
+.input-half-width {
+  width: 48.75%;
+  box-sizing: border-box;
+}
+
+.input-half-width:nth-child(3) {
+  margin-left: 10px;
+}
+
+.sign-up-container > label {
+  font-size: 18px;
+}
+
+.birthday-field {
+  width: 50%;
+  padding: 0 0 0 10px;
+  margin: 5px 0 0 0;
+  height: 30px;
+}
+
+.gender-form {
+  margin: 10px 0;
+}
+
+.gender-form > span {
+  padding: 0 10px 0 3px;
+  font: 18px;
 }

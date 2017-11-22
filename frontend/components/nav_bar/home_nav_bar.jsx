@@ -15,8 +15,7 @@ import { Link } from 'react-router-dom';
 
 //   return (
 //     <header>
-//       {/* TODO fix fakebook logo */}
-//       <img src="./fakebook.png" alt="fakebook logo"/>
+//       <img src="assets/fakebook.png" alt="fakebook logo"/>
 //       <div>
 //         {display}
 //       </div>
@@ -53,10 +52,12 @@ class HomeNavBar extends React.Component {
     <header className="home-nav-bar">
       <div className="home-nav-bar-content">
         <div>
-          <img
-            src="/assets//fakebook.png"
+          {/* <img
+            src="/assets/fakebook.png"
             alt="fakebook logo"
-            className="logo" />
+            className="logo" /> */}
+            {/* TODO ID1 comment back in below code after fixing font face */}
+            <h2 className='logo'>fakebook</h2>
           </div>
           
           <div>
