@@ -1,0 +1,50 @@
+.loggedin-nav-logo {
+  height: 24px;
+  width: 24px;
+border-radius: 4px;
+}
+
+.loggedin-nav {
+  height: 42px;
+  background-color: rgb(69,101,176);
+}
+
+.loggedin-nav-content {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+};
+
+.loggedin-nav-right {
+  display: flex;
+  align-items: center;
+};
+
+.loggedin-nav-logo {
+  margin-right: 7px;
+}
+
+.loggedin-nav-left {
+  display: flex;
+  align-items: center;
+};
+
+.loggedin-nav-left > input {
+  width: 400px;
+  height: 23px;
+  border-radius: 5px;
+  border:1px solid rgb(189,199,215);
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.loggedin-nav-profile-link {
+  text-decoration: none;
+  color: white;
+}
+
+.loggedin-nav-right > div {
+  padding: 0 10px;
+}

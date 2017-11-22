@@ -9,7 +9,6 @@ class Feed extends React.Component {
     return (
     <div>
       Success! you're in teh feed!
-      <button onClick={this.props.logout}>Log Out</button>
     </div>
     );
   }
