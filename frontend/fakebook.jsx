@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // imports for window testing
+import { logout } from './actions/session';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -22,5 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // window testing
-   
+   window.logout = logout;
 });
