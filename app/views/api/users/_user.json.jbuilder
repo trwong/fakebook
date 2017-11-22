@@ -1,1 +1,1 @@
-# TODO
+json.extract! user, :email, :id

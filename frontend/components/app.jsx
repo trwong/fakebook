@@ -7,12 +7,13 @@ import {
 
 import FeedContainer from './feed/feed_container';
 import SignupContainer from './session/signup_container';
-import NavBarContainer from './nav_bar/nav_bar_container';
+import HomeNavBarContainer from './nav_bar/home_nav_bar_container';
 
 
 export default () => (
   <div>
-    <Route path="/" component={NavBarContainer} />
+    <Route exact path="/" component={HomeNavBarContainer} />
+    <Route exact path="/" component={SignupContainer} />
     <ProtectedRoute path="/feed" component={FeedContainer} />
     <AuthRoute path="/signup" component={SignupContainer} />
   </div>

@@ -6,7 +6,7 @@ def create
     )
     if @user
       sign_in(@user)
-      render json: ["successful log in"]
+      render 'api/users/show'
     else
       render json: ["Incorrect username or password"], status: 401
     end
