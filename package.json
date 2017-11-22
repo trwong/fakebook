@@ -34,5 +34,12 @@
   "bugs": {
     "url": "https://github.com/trwong/fakebook/issues"
   },
-  "homepage": "https://github.com/trwong/fakebook#readme"
+  "homepage": "https://github.com/trwong/fakebook#readme",
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }

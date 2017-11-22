@@ -52,11 +52,6 @@ class HomeNavBar extends React.Component {
     <header className="home-nav-bar">
       <div className="home-nav-bar-content">
         <div>
-          {/* <img
-            src="/assets/fakebook.png"
-            alt="fakebook logo"
-            className="logo" /> */}
-            {/* TODO ID1 comment back in below code after fixing font face */}
             <h2 className='logo'>fakebook</h2>
           </div>
           

@@ -92,7 +92,7 @@ class Signup extends React.Component {
                 className="input-full-width"
               />
               <br />
-
+{/* TODO replace birhtday with dropdowns */}
               <label>Birthday
                 <br />
                 <input
@@ -100,7 +100,7 @@ class Signup extends React.Component {
                   className="birthday-field" />
               </label>
               <br />
-
+{/* TODO add link with modal for why we need birthday (check FB) */}
               <div className="gender-form">
                 <input
                   type="radio"
