@@ -27,23 +27,75 @@ class Signup extends React.Component {
   render () {
     return (
       <div>
-        <h3>Sign Up</h3>
-        <label>Email
-          <input
-            type="text" 
-            value={this.state.email}
-            onChange={this.handleInput("email")}
-            />
-        </label>
 
-        <label>Password
-          <input
-            type="password" 
-            value={this.state.password}
-            onChange={this.handleInput("password")}
-            />
-        </label>
-        <button onClick={this.handleSubmit}>Log In</button>
+        <div class="home-aside">
+          <h2 class="home-aside-title">Connect with friends and the world around you on Fakebook</h2>
+          <div class="home-aside-content">
+            <div class="home-aside-item">
+              <img
+                src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851565_602269956474188_918638970_n.png?oh=27689fd23ad24387d0e51c5356396a30&oe=5AD5DBF5"
+                alt="icon" />
+              <strong>See photos and updates</strong>
+              <p>from friends in News Feed</p>
+            </div>
+            <div class="home-aside-item">
+              <img
+                src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851585_216271631855613_2121533625_n.png?oh=7df497332d05c12cb617e0e934da4734&oe=5A8D4620"
+                alt="icon" />
+              <strong>Share what's new</strong>
+              <p>in your life on your Timeline</p>
+            </div>
+            <div class="home-aside-item">
+              <img
+                src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851558_160351450817973_1678868765_n.png?oh=bf9859ce8b08c56e840c8894bf4584cd&oe=5A961CD8"
+                alt="icon" />
+              <strong>Find more</strong>
+              <p>of what you're looking for with Facebook Search</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sign-up-container">
+          <h2>Sign Up</h2>
+          {/* <div>It's free and always will be.</div> */}
+          <label>First name
+            <input type="text"/>
+          </label>
+
+          <label>Last name
+            <input type="text"/>
+          </label>
+
+          <label>Email
+            <input
+              type="text" 
+              value={this.state.email}
+              onChange={this.handleInput("email")}
+              />
+          </label>
+
+          <label>New password
+            <input
+              type="password" 
+              value={this.state.password}
+              onChange={this.handleInput("password")}
+              />
+          </label>
+
+          <label>Birthday
+            <input type="date"/>
+          </label>
+
+          <label>Female
+            <input type="radio"/>
+          </label>
+
+          <label>Male
+            <input type="radio"/>
+          </label>
+
+          <button onClick={this.handleSubmit}>Create Account</button>
+        </div>
       </div>
     );
   }
