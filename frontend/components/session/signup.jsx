@@ -4,17 +4,33 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
+      birthday: "",
+      gender: "",
     };
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGender = this.handleGender.bind(this);
   }
   
   handleInput(type) {
     return (event) => {
       this.setState({ [type]: event.target.value });
+    };
+  }
+
+  handleGender(gender) {
+    return (event) => {
+      if (document.getElementById('gender-form-male').checked) {
+        this.setState({ gender: "male" });
+      }
+      if (document.getElementById('gender-form-female').checked) {
+        this.setState({ gender: "female" });
+      }
     };
   }
 
@@ -57,11 +73,12 @@ class Signup extends React.Component {
 
             <div className="sign-up-container">
               <h2>Sign Up</h2>
+              {/* TODO3 decide if i want to include this */}
               {/* <div>It's free and always will be.</div> */}
                 <input
                 type="text"
                 name="firstname"
-                onChange={this.handleInput("firstName")}
+                onChange={this.handleInput("first_name")}
                 placeholder="First name"
                 className="input-half-width"
                  />
@@ -69,7 +86,7 @@ class Signup extends React.Component {
               <input
                 type="text"
                 name="lastname"
-                onChange={this.handleInput("lastName")}
+                onChange={this.handleInput("last_name")}
                 placeholder="Last name"
                 className="input-half-width"
               />
@@ -97,18 +114,27 @@ class Signup extends React.Component {
                 <br />
                 <input
                   type="date"
-                  className="birthday-field" />
+                  className="birthday-field"
+                  onChange={this.handleInput("birthday")} />
               </label>
               <br />
 {/* TODO3 add link with modal for why we need birthday (check FB) */}
               <div className="gender-form">
                 <input
                   type="radio"
+                  name="gender"
+                  value="female"
+                  id="gender-form-female"
+                  onChange={this.handleGender("female")}
                   />
                 <span>Female</span>
 
                 <input
                   type="radio"
+                  name="gender"
+                  value="male"
+                  id="gender-form-male"
+                  onChange={this.handleGender("male")}
                   />
                 <span>Male</span>
               </div>
