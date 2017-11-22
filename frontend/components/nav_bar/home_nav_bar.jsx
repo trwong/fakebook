@@ -46,7 +46,7 @@ class HomeNavBar extends React.Component {
     this.props.login(this.state)
       .then( () => this.props.history.push('/feed'));
   }
-
+// TODO1 add error messages on unsuccessful login
   render() {
     return (
     <header className="home-nav-bar">

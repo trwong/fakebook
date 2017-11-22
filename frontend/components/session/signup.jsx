@@ -39,7 +39,7 @@ class Signup extends React.Component {
     this.props.createNewUser(this.state)
       .then( () => this.props.history.push('/feed'));
   }
-
+// TODO1 add validation messages on unsuccesful sign up
   render () {
     return (
       <div className="home-container">

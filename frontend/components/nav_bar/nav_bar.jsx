@@ -15,9 +15,10 @@ class NavBar extends React.Component {
   render() {
     console.log(this.props);
 
-    let email;
+    let firstName;
     if (this.props.user) {
-      email = this.props.user.email;
+      console.log(this.props.user);
+      firstName = this.props.user.first_name;
     }
 
     return (
@@ -46,9 +47,8 @@ class NavBar extends React.Component {
                 alt=""/>
               <Link
                 className="loggedin-nav-profile-link"
-                to="/feed">{ email }</Link>
+                to="/feed">{ firstName }</Link>
               {/* TODO2 update 'to' field once profile page is built */}
-              {/* TODO2 change email to first name after adding name to migraton */}
             </div>
             
             <div
