@@ -1,0 +1,48 @@
+.home-nav-bar {
+  height: 82px;
+  background-color: #3B5998;
+  background: linear-gradient(rgb(79,103,159), rgb(61,87,150));
+  // TODO border color not working
+  border: 1px solid rgb(61,87,150);
+}
+
+.home-nav-bar-content {
+  height: 100%;
+  width: 980px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.credential-input-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.credential-input-form > label {
+  margin-bottom: 4px;
+}
+
+.log-in-button {
+  margin-left: 15px;
+  width: 50px;
+  height: 24px;
+  background-color: #5B74A8;
+  border-color: #29447e #29447e #1a356e;
+  color: #fff;
+  background-image: linear-gradient(#637bad, #5872a7);
+}
+
+.logo {
+  width: 170px;
+}

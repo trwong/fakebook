@@ -27,27 +27,63 @@ import { Link } from 'react-router-dom';
 class HomeNavBar extends React.Component {
  constructor(props) {
     super(props);
+    this.state = {
+      email: "",
+      password: "",
+    };
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(type) {
+    return (event) => {
+      this.setState({ [type]: event.target.value });
+    };
+  }
+
+  handleLogin(event) {
+    event.preventDefault();
+    this.props.login(this.state)
+      .then( () => this.props.history.push('/feed'));
   }
 
   render() {
     return (
     <header className="home-nav-bar">
       <div className="home-nav-bar-content">
-        <img
-          src="fakebook.png"
-          alt="fakebook logo"
-          className="logo" />
-          <form>
-            <label>Email
-              <input type="text"  />
-            </label>
+        <div>
+          <img
+            src="/assets//fakebook.png"
+            alt="fakebook logo"
+            className="logo" />
+          </div>
+          
+          <div>
+            <form className="login-form">
+              <div className="credential-input-form">
+                <label>Email</label>  
+                <input
+                  id="email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleChange('email')} />
+              </div>
 
-            <label>Password
-              <input type="password"  />
-            </label>
-
-            <button>Log In</button>
-          </form>
+              <div className="credential-input-form">
+                <label>Password</label>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange('password')} />
+              </div>
+            
+              <button
+                onClick={this.handleLogin}
+                className="log-in-button uibutton"
+                >Log In</button>
+            </form>
+          </div>
         </div>
     </header>
     );
