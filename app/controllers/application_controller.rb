@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # TODO can we comment out protect from forgery b/c jquery has built in CSRF protection
+  # TODO1 can we comment out protect from forgery b/c jquery has built in CSRF protection
   # protect_from_forgery with: :exception
 
   helper_method :current_user

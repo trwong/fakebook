@@ -4,6 +4,11 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // imports for window testing
+import {
+    createNewUser,
+    login,
+    logout
+} from './actions/session';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -23,4 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // window testing
     window.getState = store.getState;
+    window.createNewUser = createNewUser;
+    window.login = login;
+    window.logout = logout;
+    window.dispatch = store.dispatch;
 });

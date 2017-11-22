@@ -36,19 +36,19 @@ class Signup extends React.Component {
                   <img
                     src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851565_602269956474188_918638970_n.png?oh=27689fd23ad24387d0e51c5356396a30&oe=5AD5DBF5"
                     alt="icon" />
-                  <p><strong>See photos and updates</strong> from friends in News Feed</p>
+                  <p><strong>See photos and updates</strong> from friends in News Feed.</p>
                 </div>
                 <div className="home-aside-item">
                   <img
                     src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851585_216271631855613_2121533625_n.png?oh=7df497332d05c12cb617e0e934da4734&oe=5A8D4620"
                     alt="icon" />
-                  <p><strong>Share what's new</strong> in your life on your Timeline</p>
+                  <p><strong>Share what's new</strong> in your life on your Timeline.</p>
                 </div>
                 <div className="home-aside-item">
                   <img
                     src="https://scontent-dft4-3.xx.fbcdn.net/v/t39.2365-6/851558_160351450817973_1678868765_n.png?oh=bf9859ce8b08c56e840c8894bf4584cd&oe=5A961CD8"
                     alt="icon" />
-                  <p><strong>Find more</strong> of what you're looking for with Facebook Search</p>
+                  <p><strong>Find more</strong> of what you're looking for with Facebook Search.</p>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ class Signup extends React.Component {
                 className="input-full-width"
               />
               <br />
-{/* TODO replace birhtday with dropdowns */}
+{/* TODO2 replace birhtday with dropdowns */}
               <label>Birthday
                 <br />
                 <input
@@ -100,7 +100,7 @@ class Signup extends React.Component {
                   className="birthday-field" />
               </label>
               <br />
-{/* TODO add link with modal for why we need birthday (check FB) */}
+{/* TODO3 add link with modal for why we need birthday (check FB) */}
               <div className="gender-form">
                 <input
                   type="radio"
@@ -113,7 +113,7 @@ class Signup extends React.Component {
                 <span>Male</span>
               </div>
               <br />
-
+{/* TODO3 Increase button size and make more similar to FB */}
               <a
                 className="uibutton large special"
                 href="#button"
