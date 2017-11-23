@@ -13,7 +13,8 @@ export default (state = [], action) => {
     case RECEIVE_POSTS:
       return action.posts;
     case RECEIVE_POST:
-      newState[action.post.id] = action.post;
+      newState.all_ids.unshift(action.post.id);
+      newState.by_id[action.post.id] = action.post;
       return newState;
     case REMOVE_POST:
       newState[action.postid] = undefined;

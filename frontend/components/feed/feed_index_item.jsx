@@ -4,15 +4,10 @@ import { Link } from 'react-router-dom';
 class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.user = this.props.fetchUser(this.props.post.author_id);
-  }
-
-  componentDidMount() {
-    this.props.fetchUser(this.props.post.author_id);
   }
 
   render() {
-    const { post, users } = this.props;
+    const { post, user } = this.props;
     return (
       <div className="feed-item-container">
         {/* TODO1 fix link "to" once profiles are made */}
@@ -28,7 +23,7 @@ class FeedIndexItem extends React.Component {
               className="feed-item-profile-link"
               ><span
                 className="feed-item-profile-name"
-                >{users.first_name} {users.last_name}</span></Link>
+                >{user.first_name} {user.last_name}</span></Link>
             <span>{post.created_at}</span>
           </span>
         </div>

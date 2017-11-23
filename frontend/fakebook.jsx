@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+
 // imports for window testing
 import {
     createNewUser,
     login,
     logout
 } from './actions/session';
+import { fetchPosts } from "./actions/post";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -32,4 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login;
     window.logout = logout;
     window.dispatch = store.dispatch;
+    window.fetchPosts = fetchPosts;
 });

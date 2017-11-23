@@ -14,3 +14,5 @@ export default (state=[], action) => {
       return state;
   }
 };
+
+// TODO/BUG this may be broken - caused news feed issue where every username was the same

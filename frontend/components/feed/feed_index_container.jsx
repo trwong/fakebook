@@ -6,7 +6,6 @@ import { fetchUser } from "./../../actions/user";
 
 const mapStateToProps = state => ({
   posts: state.posts,
-  users: state.users,
 });
 
 const mapDispatchToProps = dispatch => ({
