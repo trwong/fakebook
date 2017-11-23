@@ -8,10 +8,10 @@ class FeedIndexItem extends React.Component {
 
 
   render() {
-    console.log(this.props);
     const { id, body } = this.props.post;
+    const { user } = this.props;
     return (
-      <div>{id} - {body}</div>
+      <div>{id} - {body} - {user}</div>
     );
   }
 }
