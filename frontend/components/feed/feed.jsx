@@ -1,5 +1,6 @@
 import React from 'react';
 import PostFormContainer from './../form/post_form_container';
+import FeedIndexContainer from './feed_index_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Feed extends React.Component {
     return (
     <div className="feed-container">
       <PostFormContainer />
+      <FeedIndexContainer />
     </div>
     );
   }
