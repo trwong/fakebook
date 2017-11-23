@@ -1,5 +1,6 @@
 import React from 'react';
 import FeedIndexItemContainer from "./feed_index_item_container";
+import merge from 'lodash/merge';
 
 class FeedIndex extends React.Component {
   constructor(props) {
@@ -12,10 +13,11 @@ class FeedIndex extends React.Component {
 
   render() {
     const { posts } = this.props;
+    let reversePosts = merge([], posts).reverse();
 
     return (
       <ul>
-      { posts.map( post => 
+      { reversePosts.map( post => 
       <FeedIndexItemContainer key={post.id} post={post} />) 
         }
       </ul>
