@@ -29,7 +29,6 @@ class PostForm extends React.Component {
 
   render() {
     let firstName = this.props.currentUser.first_name;
-    console.log(this.firstName);
     return (
       <div className="post-form-container">
         <textarea
