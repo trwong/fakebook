@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-User.create({first_name: 'Taylor', last_name: 'Wong', email:"tay", password: "password", birthday: "1993-10-31", gender: "male"})
+User.create({first_name: 'Taylor', last_name: 'Wong', email:"tay@tay.com", password: "password", birthday: "1993-10-31", gender: "male"})
 
 # Posts

@@ -32,6 +32,7 @@ class HomeNavBar extends React.Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -46,6 +47,17 @@ class HomeNavBar extends React.Component {
     this.props.login(this.state)
       .then( () => this.props.history.push('/feed'));
   }
+
+  handleDemoLogin(event) {
+    event.preventDefault();
+    let demoUser = {
+      email: "tay@tay.com",
+      password: "password",
+    };
+    this.props.login(demoUser)
+      .then(() => this.props.history.push('/feed'));
+  }
+
 // TODO1 add error messages on unsuccessful login
   render() {
     return (
@@ -78,6 +90,11 @@ class HomeNavBar extends React.Component {
                 onClick={this.handleLogin}
                 className="log-in-button uibutton"
                 >Log In</button>
+
+              <button
+                onClick={this.handleDemoLogin}
+                className="log-in-button uibutton demo-button"
+                >Demo</button>
             </form>
           </div>
         </div>
