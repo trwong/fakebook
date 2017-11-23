@@ -10,7 +10,7 @@ export const getPosts = () => (
   })
 );
 
-export const createPost = post => (
+export const postPost = post => (
   $.ajax({
     method: 'POST',
     url: `/api/posts`,

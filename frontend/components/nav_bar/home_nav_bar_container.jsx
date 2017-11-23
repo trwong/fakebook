@@ -4,8 +4,6 @@ import HomeNavBar from './home_nav_bar';
 import { login } from './../../actions/session';
 
 const mapStateToProps = state => {
-  console.log(state);
-
   return {
     currentUser: state.session.currentUser
   };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PostFormContainer from './../form/post_form_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Feed extends React.Component {
   render() {
     return (
     <div>
-      Success! you're in teh feed!
+      <PostFormContainer />
     </div>
     );
   }
