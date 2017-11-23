@@ -43,8 +43,20 @@ border-radius: 4px;
 .loggedin-nav-profile-link {
   text-decoration: none;
   color: white;
+  margin-left: 5px;
 }
 
 .loggedin-nav-right > div {
   padding: 0 10px;
+}
+
+.loggedin-nav-profile-picture {
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.loggedin-nav-profile {
+ display: flex;
+ align-items: center; 
 }

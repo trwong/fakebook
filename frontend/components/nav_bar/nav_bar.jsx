@@ -40,8 +40,8 @@ class NavBar extends React.Component {
               {/* TODO2 add profile picture */}
               <img
                 className="loggedin-nav-profile-picture"
-                src=""
-                alt=""/>
+                src="/assets/karim.png"
+                alt="profile thumbnail"/>
               <Link
                 className="loggedin-nav-profile-link"
                 to="/feed">{ firstName }</Link>

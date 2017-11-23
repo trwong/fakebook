@@ -1,0 +1,31 @@
+.profile-thumbnail-medium-circle {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.feed-item-container {
+  margin-top: 10px;
+  background-color: white;
+  padding: 12px;
+}
+
+.feed-item-header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.feed-item-header-info  {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around;
+  margin-left: 5px;
+}
+
+.feed-item-profile-link {
+  text-decoration: none;
+  color: rgb(57,85,169);
+}
+
+.feed-item-profile-name {
+  font-size: 20px;
+}
