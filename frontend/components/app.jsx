@@ -9,6 +9,7 @@ import FeedContainer from './feed/feed_container';
 import SignupContainer from './session/signup_container';
 import HomeNavBarContainer from './nav_bar/home_nav_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import ProfileContainer from './profile/profile_container';
 
 
 export default () => (
@@ -21,6 +22,6 @@ export default () => (
     {/* TODO2 logged in user when visiting '/' is not redirected to /feed */}
     <ProtectedRoute path="/feed" component={FeedContainer} />
     {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
-    {/* <ProtectedRoute path="/profile" /> */}
+    <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
   </div>
 );
