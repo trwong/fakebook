@@ -34,6 +34,7 @@ class HomeNavBar extends React.Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.handleChange = this.handleChange.bind(this);
+
   }
 
   handleChange(type) {
@@ -45,7 +46,9 @@ class HomeNavBar extends React.Component {
   handleLogin(event) {
     event.preventDefault();
     this.props.login(this.state)
-      .then( () => this.props.history.push('/feed'));
+      .then( () => this.props.history.push('/feed'),
+      () => this.addErrorsOutline()
+    );
   }
 
   handleDemoLogin(event) {
@@ -56,6 +59,28 @@ class HomeNavBar extends React.Component {
     };
     this.props.login(demoUser)
       .then(() => this.props.history.push('/feed'));
+  }
+
+  // componentWillReceiveProps(newProps) {
+  //   this.addErrorsOutline();
+  // }
+
+  addErrorsOutline() {
+    console.log(this.props.errors);
+    if (this.props.errors) {
+      this.props.errors.forEach( error => {
+        if (error.includes("username")) {
+          console.log("found error");
+          $(".session-input-field").addClass("highlight-red");
+        }
+      }
+    );
+    }
+  }
+
+  removeErrorsOutline(event) {
+    let $input = $(event.target);
+    $input.removeClass("highlight-red");
   }
 
 // TODO1 add error messages on unsuccessful login
@@ -72,17 +97,21 @@ class HomeNavBar extends React.Component {
               <div className="credential-input-form">
                 <label>Email</label>  
                 <input
-                  id="email"
+                  className="session-input-field"
+                  // id="email"
                   type="text"
                   value={this.state.email}
+                  onFocus={this.removeErrorsOutline}
                   onChange={this.handleChange('email')} />
               </div>
 
               <div className="credential-input-form">
                 <label>Password</label>
                 <input
+                  className="session-input-field"
                   type="password"
                   value={this.state.password}
+                  onFocus={this.removeErrorsOutline}
                   onChange={this.handleChange('password')} />
               </div>
             

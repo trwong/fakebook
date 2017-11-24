@@ -73,7 +73,7 @@
   // font-weight: bold;
 }
 
-.sign-up-container > input {
+.signup-input {
   height: 39px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -101,19 +101,37 @@
 }
 
 .birthday-field {
-  width: 50%;
+  width: 182px;
   padding: 0 0 0 10px;
   margin: 5px 0 0 0;
-  height: 30px;
+  height: 37px;
   border-radius: 5px;
   border:1px solid rgb(189,199,215);
 }
 
 .gender-form {
-  margin: 10px 0;
+  margin: 10px 0 0 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .gender-form > span {
   padding: 0 10px 0 3px;
   font: 18px;
+}
+
+.highlight-red {
+  border: 2px solid red;
+}
+
+.add-red-border {
+  // height: 100%;
+  border: 2px solid red;
+  border-radius: 5px;
+  width: 150px;
+}
+
+#signup-create-account-button {
+  margin-top: 0;
 }

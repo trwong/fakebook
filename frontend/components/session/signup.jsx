@@ -37,8 +37,56 @@ class Signup extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createNewUser(this.state)
-      .then( () => this.props.history.push('/feed'));
+      .then( () => this.props.history.push('/feed'),
+      () => this.addErrorsOutline()
+    );
   }
+
+  addErrorsOutline() {
+    console.log(this.props.errors);
+    if (this.props.errors) {
+      this.props.errors.forEach(error => {
+        console.log(error);
+        if (error.includes("Email")) {
+          console.log("email error");
+          $("#email").addClass("highlight-red");
+        } else if (error.includes("First name")) {
+          $("#firstname").addClass("highlight-red");
+        } else if (error.includes("Last name")) {
+          $("#lastname").addClass("highlight-red");
+        } else if (error.includes("Birthday")) {
+          $("#birthday").addClass("highlight-red");
+        } else if (error.includes("Gender")) {
+          $(".gender-form").addClass("add-red-border");
+        } else if (error.includes("Password")) {
+          $("#password").addClass("highlight-red");
+        }
+      });
+    }
+  }
+
+  // addErrorsOutline() {
+  //   console.log(this.props.errors);
+  //   if (this.props.errors) {
+  //     this.props.errors.forEach(error => {
+  //       if (error.includes("Email")) {
+  //         console.log("found error");
+  //         $("#email").addClass("highlight-red");
+  //       }
+  //     }
+  //     );
+  //   }
+  // }  
+
+  removeErrorsOutline(event) {
+    let $input = $(event.target);
+    $input.removeClass("highlight-red");
+  }
+
+  removeGenderBorder(event) {
+    $(".gender-form").removeClass("add-red-border");
+  }
+
 // TODO1 add validation messages on unsuccesful sign up
   render () {
     return (
@@ -78,35 +126,43 @@ class Signup extends React.Component {
                 <input
                 type="text"
                 name="firstname"
+                id="firstname"
                 onChange={this.handleInput("first_name")}
                 placeholder="First name"
-                className="input-half-width"
+                className="input-half-width signup-input"
+                onFocus={this.removeErrorsOutline}
                  />
 
               <input
                 type="text"
                 name="lastname"
+                id="lastname"
                 onChange={this.handleInput("last_name")}
                 placeholder="Last name"
-                className="input-half-width"
+                className="input-half-width signup-input"
+                onFocus={this.removeErrorsOutline}
               />
               <br />
 
               <input
                 type="text"
                 name="email"
+                id="email"
                 onChange={this.handleInput("email")}
                 placeholder="Email"
-                className="input-full-width"
+                className="input-full-width signup-input"
+                onFocus={this.removeErrorsOutline}
               />
               <br />
 
               <input
                 type="password"
                 name="password"
+                id="password"
                 onChange={this.handleInput("password")}
                 placeholder="New password"
-                className="input-full-width"
+                className="input-full-width signup-input"
+                onFocus={this.removeErrorsOutline}
               />
               <br />
 {/* TODO2 replace birhtday with dropdowns */}
@@ -114,34 +170,40 @@ class Signup extends React.Component {
                 <br />
                 <input
                   type="date"
-                  className="birthday-field"
+                  id="birthday"
+                  className="birthday-field signup-input"
+                  onFocus={this.removeErrorsOutline}
                   onChange={this.handleInput("birthday")} />
               </label>
               <br />
 {/* TODO3 add link with modal for why we need birthday (check FB) */}
-              <div className="gender-form">
+              <span
+                className="gender-form"
+                >
                 <input
                   type="radio"
                   name="gender"
                   value="female"
                   id="gender-form-female"
                   onChange={this.handleGender("female")}
+                  onClick={this.removeGenderBorder}
                   />
                 <span>Female</span>
-
                 <input
                   type="radio"
                   name="gender"
                   value="male"
                   id="gender-form-male"
                   onChange={this.handleGender("male")}
+                  onClick={this.removeGenderBorder}
                   />
                 <span>Male</span>
-              </div>
+              </span>
               <br />
 {/* TODO3 Increase button size and make more similar to FB */}
               <a
                 className="uibutton large special"
+                id="signup-create-account-button"
                 href="#button"
                 onClick={this.handleSubmit}
                 >Create Account</a>
