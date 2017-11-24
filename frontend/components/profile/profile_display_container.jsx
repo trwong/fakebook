@@ -4,7 +4,6 @@ import ProfileDisplay from './profile_display';
 
 
 const mapStateToProps = state => ({
-
 });
 
 const mapDispatchToProps = dispatch => ({
