@@ -3,9 +3,29 @@ import React from 'react';
 class ProfileDisplay extends React.Component {
   constructor(props) {
     super(props);
+    // this.profileUser = 
+  }
+
+  componentDidMount() {
+  //   console.log("profile display comp mount", this.props);
+    this.props.fetchUser(this.props.match.params.userId);
   }
 
   render() {
+    let profileUser;
+    let profileFirstName;
+    let profileLastName;
+
+    let users = this.props.users;
+    let userId = this.props.match.params.userId;
+
+    if (Object.keys(users).includes(userId)) {
+      profileUser = this.props.users[this.props.match.params.userId];
+      profileFirstName = profileUser.first_name;
+      profileLastName = profileUser.last_name;
+    }
+
+    console.log("users", this.props.users);
 
     return (
       <div className="profile-display-container">
@@ -21,7 +41,7 @@ class ProfileDisplay extends React.Component {
             // TODO1 replace with user profile pic url
             alt="user profile picture"/>
         </span>
-        <span className="profile-user-name">Name Here</span>
+        <span className="profile-user-name">{ profileFirstName } { profileLastName }</span>
         {/* TODO1 add add friend functionality */}
         <button className="profile-add-friend-button">Add Friend</button>
         

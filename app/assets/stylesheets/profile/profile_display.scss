@@ -8,7 +8,7 @@
 }
 
 .profile-cover-image {
-  object-fit: none;
+  object-fit: cover;
   object-position: center;
   height: 200px;
   width: 850px;
@@ -22,6 +22,9 @@
 }
 
 .profile-profile-image {
+  object-fit: cover;
+  object-position: center;
+  height: 168px;
   width: 168px;
   border: 4px solid white;
 }

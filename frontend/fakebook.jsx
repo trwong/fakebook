@@ -11,6 +11,7 @@ import {
     logout
 } from './actions/session';
 import { fetchPosts } from "./actions/post";
+import { fetchUser } from "./actions/user";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -35,4 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout;
     window.dispatch = store.dispatch;
     window.fetchPosts = fetchPosts;
+    window.fetchUser = fetchUser;
 });
