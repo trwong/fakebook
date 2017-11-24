@@ -1,14 +1,23 @@
 import React from 'react';
+import cloudinary from 'cloudinary-core';
 
 class ProfileDisplay extends React.Component {
   constructor(props) {
     super(props);
-    // this.profileUser = 
   }
 
   componentDidMount() {
-  //   console.log("profile display comp mount", this.props);
     this.props.fetchUser(this.props.match.params.userId);
+  }
+
+  handleProfilePic() {
+    // cloudinary.openUploadWidget({ cloud_name: 'trwong', upload_preset: 'umzpk5ol' },
+    //   function (error, result) { console.log(error, result); }); 
+    cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'a5vxnzbp' });
+  }
+
+  handleCoverPic() {
+    
   }
 
   render() {
@@ -25,8 +34,6 @@ class ProfileDisplay extends React.Component {
       profileLastName = profileUser.last_name;
     }
 
-    console.log("users", this.props.users);
-
     return (
       <div className="profile-display-container">
         <img
@@ -36,6 +43,7 @@ class ProfileDisplay extends React.Component {
           alt="user cover picture"/>
         <span className="profile-image-container">
           <img
+            onClick={this.handleProfilePic}
             className="profile-profile-image"
             src="/assets/karim.png"
             // TODO1 replace with user profile pic url
