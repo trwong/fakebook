@@ -4,35 +4,41 @@ import cloudinary from 'cloudinary-core';
 class ProfileDisplay extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   profileUser: this.props.profileUser,
+    // };
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.location.pathname !== this.props.location.pathname) {
+      this.props.fetchUser(newProps.match.params.userId);
+    }
+  }
+
   handleProfilePic() {
-    // cloudinary.openUploadWidget({ cloud_name: 'trwong', upload_preset: 'umzpk5ol' },
-    //   function (error, result) { console.log(error, result); }); 
-    cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'a5vxnzbp' });
+
   }
 
   handleCoverPic() {
-    
+
   }
 
   render() {
-    let profileUser;
     let profileFirstName;
     let profileLastName;
+    
+    let profileUser = this.props.profileUser;
 
-    let users = this.props.users;
-    let userId = this.props.match.params.userId;
-
-    if (Object.keys(users).includes(userId)) {
-      profileUser = this.props.users[this.props.match.params.userId];
+    
+    if (profileUser !== undefined ) {
       profileFirstName = profileUser.first_name;
       profileLastName = profileUser.last_name;
     }
+    
 
     return (
       <div className="profile-display-container">
@@ -51,7 +57,8 @@ class ProfileDisplay extends React.Component {
         </span>
         <span className="profile-user-name">{ profileFirstName } { profileLastName }</span>
         {/* TODO1 add add friend functionality */}
-        <button className="profile-add-friend-button">Add Friend</button>
+        <button
+          className="profile-add-friend-button uibutton">Add Friend</button>
         
       </div>
     );

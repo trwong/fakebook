@@ -19,7 +19,7 @@ class FeedIndexItem extends React.Component {
           <span className="feed-item-header-info">
           {/* TODO1 update to link once profiles are built */}
             <Link
-              to="/feed"
+              to={`/profile/${user.id}`}
               className="feed-item-profile-link"
               ><span
                 className="feed-item-profile-name"

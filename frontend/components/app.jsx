@@ -20,8 +20,12 @@ export default () => (
     </Switch>
     <AuthRoute exact path="/" component={SignupContainer} />
     {/* TODO2 logged in user when visiting '/' is not redirected to /feed */}
-    <ProtectedRoute path="/feed" component={FeedContainer} />
+    <ProtectedRoute
+      path="/feed"
+      component={FeedContainer} />
     {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
-    <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
+    <ProtectedRoute
+      path="/profile/:userId"
+      component={ProfileContainer} />
   </div>
 );
