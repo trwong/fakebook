@@ -8,6 +8,18 @@ class FeedIndexItem extends React.Component {
 
   render() {
     const { post, user } = this.props;
+
+    let recipientText;
+    console.log("props recipient",this.props.recipient);
+    if (this.props.recipient !== undefined) {
+      const { first_name, last_name } = this.props.recipient;
+      recipientText = this.props.recipient ? (
+        `> ${first_name} ${last_name}`
+      ) : (
+        ""
+      );
+    }
+
     return (
       <div className="feed-item-container">
         {/* TODO1 fix link "to" once profiles are made */}
@@ -23,7 +35,7 @@ class FeedIndexItem extends React.Component {
               className="feed-item-profile-link"
               ><span
                 className="feed-item-profile-name"
-                >{user.first_name} {user.last_name}</span></Link>
+                >{user.first_name} {user.last_name} {recipientText}</span></Link>
             <span>{post.created_at}</span>
           </span>
         </div>

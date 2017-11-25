@@ -28,7 +28,8 @@ class FeedIndex extends React.Component {
         <FeedIndexItemContainer
           key={id}
           post={by_id[id]}
-          user={users[by_id[id].author_id]} />) 
+          user={users[by_id[id].author_id]}
+          recipient={users[by_id[id].recipient_id]} />) 
     ) : ( 
       <div></div>
     );
