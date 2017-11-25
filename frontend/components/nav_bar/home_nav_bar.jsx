@@ -117,11 +117,11 @@ class HomeNavBar extends React.Component {
             
               <button
                 onClick={this.handleLogin}
-                className="log-in-button uibutton"
+                className="log-in-button"
                 >Log In</button>
 
               <button
-                className="log-in-button uibutton"
+                className="log-in-button"
                 onClick={this.handleDemoLogin}
                 >Demo</button>
             </form>
