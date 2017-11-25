@@ -12,9 +12,18 @@ class FeedIndexItem extends React.Component {
     let recipientText;
     console.log("props recipient",this.props.recipient);
     if (this.props.recipient !== undefined) {
-      const { first_name, last_name } = this.props.recipient;
+      let { first_name, last_name, id } = this.props.recipient;
       recipientText = this.props.recipient ? (
-        `> ${first_name} ${last_name}`
+        <span>
+          <i class="fa fa-caret-right feed-item-caret" aria-hidden="true"></i>
+          <Link
+            to={`/profile/${id}`}
+            className="feed-item-profile-link"
+            >
+            <span
+              className="feed-item-profile-name">{`${first_name} ${last_name}`}</span>
+          </Link>
+        </span>
       ) : (
         ""
       );
@@ -30,12 +39,17 @@ class FeedIndexItem extends React.Component {
             alt="profile picture thumbnail"/>
           <span className="feed-item-header-info">
           {/* TODO1 update to link once profiles are built */}
-            <Link
-              to={`/profile/${user.id}`}
-              className="feed-item-profile-link"
-              ><span
-                className="feed-item-profile-name"
-                >{user.first_name} {user.last_name} {recipientText}</span></Link>
+
+            <span className="feed-item-name-container">
+              <Link
+                to={`/profile/${user.id}`}
+                className="feed-item-profile-link"
+                ><span
+                  className="feed-item-profile-name"
+                  >{user.first_name} {user.last_name} </span></Link>
+                {recipientText}
+            </span>
+            
             <span>{post.created_at}</span>
           </span>
         </div>

@@ -31,3 +31,13 @@
 .feed-item-profile-name {
   font-size: 20px;
 }
+
+.feed-item-name-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.feed-item-caret {
+  margin: 0 10px;
+  color: gray;
+}
