@@ -15,7 +15,7 @@ import { fetchUser } from "./actions/user";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
-
+    
     let preloadedState = undefined;
     if (window.currentUser) {
         preloadedState = {
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
     }
+    // TODO delete window current user after testing
 
     const store = configureStore(preloadedState);
     ReactDOM.render(<Root store={store}/>, root);

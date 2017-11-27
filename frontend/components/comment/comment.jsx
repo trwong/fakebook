@@ -7,13 +7,16 @@ class Comment extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchComments(this.props.postId);
+  }
+
   render() {
     let { postId } = this.props;
     
     return (
     <div className="comment-container">
-      Comments Container
-      <CommentIndexContainer />
+      <CommentIndexContainer postId={postId}/>
       <CommentFormContainer postId={postId}/>
     </div>
     );
