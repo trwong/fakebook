@@ -13,15 +13,9 @@ export default (state = {}, action) => {
     case RECEIVE_COMMENTS:
       return action.comments;
     case RECEIVE_COMMENT:
-      console.log("all_ids", newState.all_ids);
-      newState.all_ids.push(action.comment.id);
-      newState.by_id[action.comment.id] = action.comment;
+      newState[action.comment.id] = action.comment;
       return newState;
     case REMOVE_COMMENT:
-      let index = newState.all_ids.indexOf(action.commentId);
-      if (index >= 0) {
-        newState.all_ids.splice( index, 1 );
-      }
       newState[action.commentId] = undefined;
       return newState;
     default:

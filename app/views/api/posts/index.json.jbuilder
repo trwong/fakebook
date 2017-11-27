@@ -14,6 +14,9 @@ json.by_id do
     json.set! post.id do
       # user_id_array << post.author_id
       json.extract! post, :id, :body, :author_id, :recipient_id, :created_at
+      json.comments post.comments
+        .sort_by { |comment| comment.created_at }
+        .map { |comment| comment.id }
     end
   end
 end
