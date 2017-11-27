@@ -17,7 +17,11 @@ export default (state = [], action) => {
       newState.by_id[action.post.id] = action.post;
       return newState;
     case REMOVE_POST:
-      newState[action.postid] = undefined;
+      let index = newState.all_ids.indexOf(action.postId);
+      if (index >= 0) {
+        newState.all_ids.splice( index, 1 );
+      }
+      newState.by_id[action.postId] = undefined;
       return newState;
     default:
       return state;

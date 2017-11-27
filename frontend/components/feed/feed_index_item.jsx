@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentContainer from './../comment/comment_container.jsx';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class FeedIndexItem extends React.Component {
         
         <br />
         {post.body}
+        <CommentContainer />
       </div>
     );
   }
