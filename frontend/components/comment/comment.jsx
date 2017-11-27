@@ -8,11 +8,13 @@ class Comment extends React.Component {
   }
 
   render() {
+    let { postId } = this.props;
+    
     return (
     <div className="comment-container">
       Comments Container
       <CommentIndexContainer />
-      <CommentFormContainer />
+      <CommentFormContainer postId={postId}/>
     </div>
     );
   }

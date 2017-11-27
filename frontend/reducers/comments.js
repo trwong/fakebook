@@ -13,6 +13,7 @@ export default (state = {}, action) => {
     case RECEIVE_COMMENTS:
       return action.comments;
     case RECEIVE_COMMENT:
+      console.log("all_ids", newState.all_ids);
       newState.all_ids.push(action.comment.id);
       newState.by_id[action.comment.id] = action.comment;
       return newState;

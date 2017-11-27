@@ -56,7 +56,7 @@ class FeedIndexItem extends React.Component {
         
         <br />
         {post.body}
-        <CommentContainer />
+        <CommentContainer postId={post.id}/>
       </div>
     );
   }

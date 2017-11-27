@@ -1,14 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import CommentForm from './comment_form';
-import { postComment } from './../../actions/comment';
+import { connect } from 'react-redux';
+import { fetchComments, createComment } from './../../actions/comment';
 
 const mapStateToProps = state => ({
-
+  currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
-  postComment: (postId, commentId) => dispatch(postComment(postId, commentId)),
+  fetchComments: postId => dispatch(fetchComments(postId)),
+  createComment: (postId, comment) => dispatch(createComment(postId, comment)),
 });
 
 
