@@ -8,7 +8,7 @@ class FeedIndex extends React.Component {
     this.state = props;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchPosts();
   } 
 

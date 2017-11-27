@@ -10,12 +10,11 @@ class FeedIndexItem extends React.Component {
     const { post, user } = this.props;
 
     let recipientText;
-    console.log("props recipient",this.props.recipient);
     if (this.props.recipient !== undefined) {
       let { first_name, last_name, id } = this.props.recipient;
       recipientText = this.props.recipient ? (
         <span>
-          <i class="fa fa-caret-right feed-item-caret" aria-hidden="true"></i>
+          <i className="fa fa-caret-right feed-item-caret" aria-hidden="true"></i>
           <Link
             to={`/profile/${id}`}
             className="feed-item-profile-link"

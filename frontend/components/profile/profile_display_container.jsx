@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileDisplay from './profile_display';
-import { fetchUser } from './../../actions/user';
+import { fetchUser, updateUser } from './../../actions/user';
 import { withRouter } from 'react-router-dom'; 
 
-const mapStateToProps = (state, ownProps) => ({
-  profileUser: state.users[ownProps.match.params.userId],
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log("mapStateToProps", state.session.currentUser);
+  return ({
+    profileUser: state.users[ownProps.match.params.userId],
+    currentUser: state.session.currentUser,
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: userId => dispatch(fetchUser(userId)),
+  updateUser: user => dispatch(updateUser(user)),
 });
 
 

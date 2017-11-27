@@ -1,4 +1,4 @@
-import { getUser } from "./../util/user_util";
+import { getUser, patchUser } from "./../util/user_util";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
@@ -11,4 +11,8 @@ const receiveUser = user => ({
 // thunk action creators
 export const fetchUser = userId => dispatch => {
   getUser(userId).then( user => dispatch(receiveUser(user)));
+};
+
+export const updateUser = user => dispatch => {
+  patchUser(user).then( newUser => dispatch(receiveUser(newUser)));
 };
