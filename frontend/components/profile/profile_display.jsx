@@ -9,46 +9,46 @@ class ProfileDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: parseInt(this.props.currentUser.id),
-      profile_img_url: this.props.currentUser.profile_img_url,
-      cover_img_url: this.props.currentUser.cover_img_url,
+      id: "",
+      profile_img_url: "",
+      cover_img_url: "",
     };
+
+    this.profileUser = this.props.users[this.props.ownProps.match.params.userId];
 
     this.profileImageDrop = this.profileImageDrop.bind(this);
     this.handleProfileImageUpload = this.handleProfileImageUpload.bind(this);
     this.coverImageDrop = this.coverImageDrop.bind(this);
     this.handleCoverImageUpload = this.handleCoverImageUpload.bind(this);
-    // debugger;
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
-    console.log("did mount before", this.state);
+    this.props.fetchUser(this.profileUser.id);
     this.setState({
-      profile_img_url: this.props.currentUser.profile_img_url,
-      cover_img_url: this.props.currentUser.cover_img_url,
-    }, () => console.log("did mount after", this.state));
-    
+      id: this.profileUser.id,
+      profile_img_url: this.profileUser.profile_img_url,
+      cover_img_url: this.profileUser.cover_img_url,
+    });
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("will receive before", this.state);
+    let newUserId = newProps.ownProps.match.params.userId;
+    
     if (newProps.location.pathname !== this.props.location.pathname) {
-      console.log("inside will receive props if path");
       this.props.fetchUser(newProps.match.params.userId);
     }
-    // if (this.state.profile_img_url !== newProps.currentUser.profile_img_url) {
-    //   console.log("inside will receive props if profile");
-    //   this.setState({profile_img_url: newProps.currentUser.profile_img_url});
-    // }
-    // if (this.state.cover_img_url !== newProps.currentUser.cover_img_url) {
-      //   console.log("inside will receive props if cover");
-      //   this.setState({cover_img_url: newProps.currentUser.cover_img_url});
-      // }
-      // console.log("will receive after", this.state);
-    this.setState({profile_img_url: newProps.currentUser.profile_img_url});
-    this.setState({cover_img_url: newProps.currentUser.cover_img_url});
-
+    if (newProps.users[newUserId].profile_img_url !==
+      this.profileUser.profile_img_url) {
+      this.setState({
+        profile_img_url: newProps.users[newUserId].profile_img_url
+      });
+    }
+    if (newProps.users[newUserId].cover_img_url !==
+      this.profileUser.cover_img_url) {
+      this.setState({
+        cover_img_url: newProps.users[newUserId].cover_img_url
+      });
+    }
   }
 
   handleProfilePicClick() {
@@ -80,12 +80,11 @@ class ProfileDisplay extends React.Component {
       if (response.body.secure_url !== '') {
         this.setState({
           profile_img_url: response.body.secure_url
-        });
-        // TODO/BUG below block of code only works inside the if statement
-        this.props.updateUser({
+        }, () => this.props.updateUser({
             id: parseInt(this.props.currentUser.id),
             profile_img_url: this.state.profile_img_url,
-        });
+        })
+      );
       }
     });
   }
@@ -111,12 +110,11 @@ class ProfileDisplay extends React.Component {
       if (response.body.secure_url !== '') {
         this.setState({
           cover_img_url: response.body.secure_url
-        });
-        // TODO/BUG below block of code only works inside the if statement
-        this.props.updateUser({
+        }, () => this.props.updateUser({
             id: parseInt(this.props.currentUser.id),
             cover_img_url: this.state.cover_img_url,
-        });
+        })
+      );
       }
     });
   }
@@ -133,7 +131,6 @@ class ProfileDisplay extends React.Component {
       profileLastName = profileUser.last_name;
     }
     
-    // debugger;
     return (
       <div className="profile-display-container">
         <img

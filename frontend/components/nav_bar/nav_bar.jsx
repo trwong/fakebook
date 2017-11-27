@@ -11,6 +11,11 @@ class NavBar extends React.Component {
     event.preventDefault();
     this.props.logout();
   }
+
+  componentDidMount() {
+    // fetching users to the rest of the app has access to it
+    this.props.fetchUsers();
+  }
   
   render() {
     let firstName;
