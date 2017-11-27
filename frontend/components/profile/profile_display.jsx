@@ -23,12 +23,14 @@ class ProfileDisplay extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.profileUser.id);
-    this.setState({
-      id: this.profileUser.id,
-      profile_img_url: this.profileUser.profile_img_url,
-      cover_img_url: this.profileUser.cover_img_url,
-    });
+    this.props.fetchUser(this.props.ownProps.match.params.userId);
+    if (this.props.users && this.props.users[this.props.ownProps.match.params.userId]) {
+      this.setState({
+        id: this.props.ownProps.match.params.userId,
+        profile_img_url: this.profileUser.profile_img_url,
+        cover_img_url: this.profileUser.cover_img_url,
+      });
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -133,32 +135,45 @@ class ProfileDisplay extends React.Component {
     
     return (
       <div className="profile-display-container">
-        <img
-          onClick={this.handleCoverPicClick}
-          className="profile-cover-image"
-          src={this.state.cover_img_url}
-          alt="user cover picture"
-          />
+        <span className="cover-image-container">
+          <img
+            onClick={this.handleCoverPicClick}
+            className="profile-cover-image"
+            src={this.state.cover_img_url}
+            alt="user cover picture"
+            />
           <Dropzone
               id="cover-picture-file-input"
               multiple={false}
               accept="image/*"
               onDrop={this.coverImageDrop}>
-              <p>Drop an image or click to select a file to upload.</p>
           </Dropzone>
+          <span
+            className="cover-fade"
+            onClick={this.handleCoverPicClick}>
+            <i className="fa fa-camera cover-fade-camera" aria-hidden="true"></i>
+            Update Cover Photo
+          </span>
+        </span>
+
         <span className="profile-image-container">
           <img
             onClick={this.handleProfilePicClick}
             className="profile-profile-image"
             src={this.state.profile_img_url}
             alt="user profile picture"/>
-            <Dropzone
-              id="profile-picture-file-input"
-              multiple={false}
-              accept="image/*"
-              onDrop={this.profileImageDrop}>
-              <p>Drop an image or click to select a file to upload.</p>
+          <Dropzone
+            id="profile-picture-file-input"
+            multiple={false}
+            accept="image/*"
+            onDrop={this.profileImageDrop}>
           </Dropzone>
+          <span
+            className="profile-fade"
+            onClick={this.handleProfilePicClick}>
+            <i className="fa fa-camera profile-fade-camera" aria-hidden="true"></i>
+            Update Profile Picture
+          </span>
         </span>
         <span className="profile-user-name">{ profileFirstName } { profileLastName }</span>
         {/* TODO1 add add friend functionality */}

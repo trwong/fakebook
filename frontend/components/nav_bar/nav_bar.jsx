@@ -20,9 +20,11 @@ class NavBar extends React.Component {
   render() {
     let firstName;
     let userId;
+    let profile_img_url;
     if (this.props.user) {
       firstName = this.props.user.first_name;
       userId = this.props.user.id;
+      profile_img_url = this.props.user.profile_img_url;
     }
 
     return (
@@ -47,7 +49,7 @@ class NavBar extends React.Component {
               {/* TODO2 add profile picture */}
               <img
                 className="loggedin-nav-profile-picture"
-                src="/assets/karim.png"
+                src={ profile_img_url }
                 alt="profile thumbnail"/>
               <Link
                 className="loggedin-nav-profile-link"

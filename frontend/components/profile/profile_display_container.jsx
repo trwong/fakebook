@@ -5,7 +5,6 @@ import { fetchUsers, fetchUser, updateUser } from './../../actions/user';
 import { withRouter } from 'react-router-dom'; 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("users in prof disp conta",state.users);
   return ({
     currentUser: state.session.currentUser,
     ownProps: ownProps,

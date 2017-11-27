@@ -35,7 +35,7 @@ class FeedIndexItem extends React.Component {
         <div className="feed-item-header">
           <img 
             className="profile-thumbnail-medium-circle"
-            src="/assets/karim.png"
+            src={ user.profile_img_url }
             alt="profile picture thumbnail"/>
           <span className="feed-item-header-info">
           {/* TODO1 update to link once profiles are built */}

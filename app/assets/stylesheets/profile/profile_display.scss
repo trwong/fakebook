@@ -1,7 +1,7 @@
 .profile-display-container {
   background: white;
   width: 850px;
-  height: 250px;
+  height: 365px;
   margin: auto;
   position: relative;
   border: 1px rgb(221,223,226) solid;
@@ -10,7 +10,7 @@
 .profile-cover-image {
   object-fit: cover;
   object-position: center;
-  height: 200px;
+  height: 315px;
   width: 850px;
 }
 
@@ -46,4 +46,58 @@
 
 #cover-picture-file-input, #profile-picture-file-input {
   display: none;
+}
+
+.profile-fade {
+  position: absolute;
+  font-size: 15px;
+  font-family: Helvetica;
+  color: white;
+  width: 120px;
+  height: 32px;
+  bottom: 7px;
+  left: 4px;
+  padding: 10px 5px 10px 42px;
+  background: black;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+}
+
+.profile-fade-camera {
+  position: absolute;
+  color: white;
+  left: 13px;
+  bottom: 19px;
+  opacity: inherit;
+}
+
+// .profile-fade:hover {
+//   opacity: 0.7;
+// }
+
+.profile-image-container:hover .profile-fade {
+  opacity: 0.7;
+}
+
+.cover-fade {
+  position: absolute;
+  font-size: 14px;
+  font-family: Helvetica;
+  color: white;
+  top: 10px;
+  left: 10px;
+  background: black;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.cover-fade-camera {
+  margin-right: 10px;
+}
+
+.cover-image-container:hover .cover-fade {
+  opacity: 0.7;
 }
