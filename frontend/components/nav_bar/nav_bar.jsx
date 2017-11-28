@@ -21,10 +21,12 @@ class NavBar extends React.Component {
     let firstName;
     let userId;
     let profile_img_url;
-    if (this.props.user) {
+    if (this.props.user && this.props.posts.users) {
       firstName = this.props.user.first_name;
       userId = this.props.user.id;
-      profile_img_url = this.props.user.profile_img_url;
+      // profile_img_url = this.props.user.profile_img_url;
+      // console.log("new prof img url", this.props.posts.users);
+      profile_img_url = this.props.posts.users[userId].profile_img_url;
     }
 
     return (

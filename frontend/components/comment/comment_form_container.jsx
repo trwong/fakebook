@@ -5,6 +5,7 @@ import { fetchComments, createComment } from './../../actions/comment';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
+  posts: state.posts,
 });
 
 const mapDispatchToProps = dispatch => ({

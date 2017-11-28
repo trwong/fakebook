@@ -6,6 +6,9 @@ import {
 import {
   RECEIVE_COMMENT,
 } from "./../actions/comment";
+import {
+  RECEIVE_USER,
+} from "./../actions/user";
 import merge from 'lodash/merge';
 
 export default (state = [], action) => {
@@ -30,6 +33,10 @@ export default (state = [], action) => {
     case RECEIVE_COMMENT:
       newState.by_id[action.comment.post_id].comments.push(action.comment.id);
       newState.comments[action.comment.id] = action.comment;
+      return newState;
+      // TODO CHECK HERE FOR BUGS IF THERE ARE ISSUES WITH POST / USERS
+    case RECEIVE_USER:
+      newState.users[action.user.id] = action.user;
       return newState;
     default:
       return state;
