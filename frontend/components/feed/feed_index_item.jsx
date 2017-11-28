@@ -40,14 +40,12 @@ class FeedIndexItem extends React.Component {
     return (
       <div className="feed-item-container">
         <div className="feed-comment-divider">
-          {/* TODO1 fix link "to" once profiles are made */}
           <div className="feed-item-header">
             <img 
               className="profile-thumbnail-medium-circle"
               src={ user.profile_img_url }
               alt="profile picture thumbnail"/>
             <span className="feed-item-header-info">
-            {/* TODO1 update to link once profiles are built */}
 
               <span className="feed-item-name-container">
                 <Link

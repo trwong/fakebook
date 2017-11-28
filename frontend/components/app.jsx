@@ -19,7 +19,6 @@ export default () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <AuthRoute exact path="/" component={SignupContainer} />
-    {/* TODO2 logged in user when visiting '/' is not redirected to /feed */}
     <ProtectedRoute
       path="/feed"
       component={FeedContainer} />

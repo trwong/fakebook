@@ -48,7 +48,6 @@ class NavBar extends React.Component {
           <div className="loggedin-nav-right">
             <div
               className="loggedin-nav-profile">
-              {/* TODO2 add profile picture */}
               <img
                 className="loggedin-nav-profile-picture"
                 src={ profile_img_url }
@@ -56,7 +55,6 @@ class NavBar extends React.Component {
               <Link
                 className="loggedin-nav-profile-link"
                 to={`/profile/${ userId }`}>{ firstName }</Link>
-              {/* TODO2 update 'to' field once profile page is built */}
             </div>
             
             <div

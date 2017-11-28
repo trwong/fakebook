@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // window testing
+    // TODO delete after testing
     window.getState = store.getState;
     window.createNewUser = createNewUser;
     window.login = login;

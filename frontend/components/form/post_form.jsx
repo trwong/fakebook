@@ -57,7 +57,6 @@ class PostForm extends React.Component {
     ) {
       placeholderText = `What's on your mind, ${firstName}?`;
     } else {
-      // TODO2 add string interpolation for user first name
       let profileFirstName;
       let profileUser = this.props.profileUser;
       if (profileUser !== undefined ) {
