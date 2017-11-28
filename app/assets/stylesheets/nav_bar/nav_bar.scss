@@ -52,8 +52,11 @@ border-radius: 4px;
 
 .loggedin-nav-profile-picture {
   height: 24px;
+  width: 24px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, .1);
+  object-fit: cover;
+  object-position: center;
 }
 
 .loggedin-nav-profile {
