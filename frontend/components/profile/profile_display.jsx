@@ -125,9 +125,8 @@ class ProfileDisplay extends React.Component {
     let profileFirstName;
     let profileLastName;
     
-    let profileUser = this.props.profileUser;
+    let profileUser = this.profileUser;
 
-    
     if (profileUser !== undefined ) {
       profileFirstName = profileUser.first_name;
       profileLastName = profileUser.last_name;
