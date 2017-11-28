@@ -16,6 +16,43 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Comment
 
+
+  # TODO review below 4 associations
+  has_many :requested_friendships,
+    primary_key: :id,
+    foreign_key: :requestor_id,
+    class_name: :Friend
+
+  has_many :received_friendships,
+    primary_key: :id,
+    foreign_key: :receiver_id,
+    class_name: :Friend
+
+  has_many :requested_friends,
+    through: :received_friendships,
+    source: :requestor
+
+  has_many :received_friends,
+    through: :requested_friendships,
+    source: :receiver
+
+  def all_friends
+    self.requested_friends + self.received_friends
+  end
+
+  def outgoing_pending_friends
+    self.requested_friendships.where("status = 'pending'")
+  end
+
+  def incoming_pending_friends
+  end
+
+  def accepted_friends
+  end
+
+  def denied_friends
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

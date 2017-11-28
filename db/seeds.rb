@@ -61,3 +61,8 @@ end
   post_id = Random.rand(Post.all.count) + 1
   Comment.create(body: body, author_id: author_id, post_id: post_id)
 end
+
+Friend.create(requestor_id: 1, receiver_id: 2, status: "accepted")
+Friend.create(requestor_id: 3, receiver_id: 1, status: "pending")
+Friend.create(requestor_id: 1, receiver_id: 4, status: "accepted")
+Friend.create(requestor_id: 5, receiver_id: 1, status: "accepted")
