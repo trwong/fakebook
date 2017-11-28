@@ -8,9 +8,9 @@ class FeedIndex extends React.Component {
     this.state = props;
   }
 
-  componentDidMount() {
-    this.props.fetchPosts();
-  } 
+  // componentDidMount() {
+  //   this.props.fetchPosts();
+  // } 
 
   componentWillReceiveProps(newProps) {
     // debugger;

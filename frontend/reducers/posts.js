@@ -3,6 +3,9 @@ import {
   RECEIVE_POST,
   REMOVE_POST,
 } from './../actions/post';
+import {
+  RECEIVE_COMMENT,
+} from "./../actions/comment";
 import merge from 'lodash/merge';
 
 export default (state = [], action) => {
@@ -22,6 +25,11 @@ export default (state = [], action) => {
         newState.all_ids.splice( index, 1 );
       }
       newState.by_id[action.postId] = undefined;
+      return newState;
+
+    case RECEIVE_COMMENT:
+      newState.by_id[action.comment.post_id].comments.push(action.comment.id);
+      newState.comments[action.comment.id] = action.comment;
       return newState;
     default:
       return state;

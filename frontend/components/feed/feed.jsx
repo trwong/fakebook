@@ -7,6 +7,10 @@ class Feed extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchPosts();
+  } 
+
   render() {
     return (
     <div className="feed-container">

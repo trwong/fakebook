@@ -5,7 +5,7 @@ import { fetchComments } from './../../actions/comment';
 
 
 const mapStateToProps = state => ({
-
+  
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -7,10 +7,6 @@ class Comment extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchComments(this.props.postId);
-  // }
-
   render() {
     let { postId } = this.props;
     

@@ -65,19 +65,6 @@ class Signup extends React.Component {
     }
   }
 
-  // addErrorsOutline() {
-  //   console.log(this.props.errors);
-  //   if (this.props.errors) {
-  //     this.props.errors.forEach(error => {
-  //       if (error.includes("Email")) {
-  //         console.log("found error");
-  //         $("#email").addClass("highlight-red");
-  //       }
-  //     }
-  //     );
-  //   }
-  // }  
-
   removeErrorsOutline(event) {
     let $input = $(event.target);
     $input.removeClass("highlight-red");

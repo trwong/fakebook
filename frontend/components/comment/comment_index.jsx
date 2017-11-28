@@ -5,20 +5,25 @@ class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      commentsArr: this.props.posts.by_id[this.props.postId].comments,
-    };
+    this.state = props;
+    // commentsArr: this.props.posts.by_id[this.props.postId].comments,
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps);
   }
 
   render() {
+    let commentsArr = this.state.posts.by_id[this.props.postId].comments;
+
     return (
     <div className="comment-index-container">
       {
-        // this.state.commentsArr.map( commentId => (
-        //   <CommentIndexItemContainer
-        //     commentId={commentId}
-        //     key={commentId} />
-        // ))
+        commentsArr.map( commentId => (
+          <CommentIndexItemContainer
+            commentId={commentId}
+            key={commentId} />
+        ))
       }
     </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
@@ -6,20 +7,16 @@ class CommentIndexItem extends React.Component {
   }
 
   render() {
-    // let comment;
-    // let user_id;
-    // let body;
-    // if (this.props.commentId) {
-    //   comment = this.props.comments[this.props.commentId];
-    //   user_id = comment.user_id;
-    //   body = comment.body;
-    // }
+    let { commentId, posts } = this.props;
+    let { all_ids, by_id, comments, users } = posts;
+    let comment = comments[commentId];
 
     return (
     <div className="comment-index-item">
-      <img src="" alt=""/>
-      {/* <span value={user_id}></span>
-      <span value={body}></span> */}
+    {/* commenting out for now */}
+      {/* <img src={users[comment.author_id].profile_img_url} alt=""/> */}
+      <span>{users[comment.author_id].first_name} {users[comment.author_id].last_name}</span>
+      <span>{comment.body}</span>
     </div>
     );
   }
