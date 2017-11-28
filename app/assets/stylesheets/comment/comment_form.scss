@@ -1,0 +1,29 @@
+.comment-form-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.comment-form-form {
+  display: inline;
+  margin: 0 0 0 10px;
+}
+
+.comment-form-input {
+  width: 525px;
+  box-sizing: border-box;
+  display: inline;
+  border-radius: 15px;
+  border: 1px solid rgb(221,223,226);
+  padding: 7px 7px 7px 10px;
+  height: 32px;
+  font-size: 16px;
+}
+
+.comment-form-profile-thumbnail {
+  display: inline-block;
+}
+
+input.comment-form-input:focus {
+  outline-width: 0;
+}

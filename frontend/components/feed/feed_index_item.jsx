@@ -31,31 +31,33 @@ class FeedIndexItem extends React.Component {
 
     return (
       <div className="feed-item-container">
-        {/* TODO1 fix link "to" once profiles are made */}
-        <div className="feed-item-header">
-          <img 
-            className="profile-thumbnail-medium-circle"
-            src={ user.profile_img_url }
-            alt="profile picture thumbnail"/>
-          <span className="feed-item-header-info">
-          {/* TODO1 update to link once profiles are built */}
+        <div className="feed-comment-divider">
+          {/* TODO1 fix link "to" once profiles are made */}
+          <div className="feed-item-header">
+            <img 
+              className="profile-thumbnail-medium-circle"
+              src={ user.profile_img_url }
+              alt="profile picture thumbnail"/>
+            <span className="feed-item-header-info">
+            {/* TODO1 update to link once profiles are built */}
 
-            <span className="feed-item-name-container">
-              <Link
-                to={`/profile/${user.id}`}
-                className="feed-item-profile-link"
-                ><span
-                  className="feed-item-profile-name"
-                  >{user.first_name} {user.last_name} </span></Link>
-                {recipientText}
+              <span className="feed-item-name-container">
+                <Link
+                  to={`/profile/${user.id}`}
+                  className="feed-item-profile-link"
+                  ><span
+                    className="feed-item-profile-name"
+                    >{user.first_name} {user.last_name} </span></Link>
+                  {recipientText}
+              </span>
+              
+              <span>{post.created_at}</span>
             </span>
-            
-            <span>{post.created_at}</span>
-          </span>
+          </div>
+          
+          <br />
+          {post.body}
         </div>
-        
-        <br />
-        {post.body}
         <CommentContainer postId={post.id}/>
       </div>
     );

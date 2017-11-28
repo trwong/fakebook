@@ -6,7 +6,7 @@
 .feed-item-container {
   margin-top: 10px;
   background-color: white;
-  padding: 12px;
+  // padding: 12px;
   border: 1px solid rgb(221,223,226);
   border-radius: 5px;
 }
@@ -40,4 +40,11 @@
 .feed-item-caret {
   margin: 0 10px;
   color: gray;
+}
+
+.feed-comment-divider {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(221,223,226);
+  box-sizing: border-box;
 }

@@ -16,15 +16,17 @@ class CommentIndex extends React.Component {
   render() {
     let commentsArr = this.state.posts.by_id[this.props.postId].comments;
 
-    return (
-    <div className="comment-index-container">
-      {
-        commentsArr.map( commentId => (
+    let commentsMap = commentsArr ? (
+      commentsArr.map( commentId => (
           <CommentIndexItemContainer
             commentId={commentId}
             key={commentId} />
         ))
-      }
+    ) : ("");
+
+    return (
+    <div className="comment-index-container">
+      { commentsMap }
     </div>
     );
   }

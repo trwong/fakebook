@@ -13,10 +13,28 @@ class CommentIndexItem extends React.Component {
 
     return (
     <div className="comment-index-item">
-    {/* commenting out for now */}
-      {/* <img src={users[comment.author_id].profile_img_url} alt=""/> */}
-      <span>{users[comment.author_id].first_name} {users[comment.author_id].last_name}</span>
-      <span>{comment.body}</span>
+
+      <div className="profile-thumbnail-container">
+        <img
+          className="profile-thumbnail-small-circle"
+          src={users[comment.author_id].profile_img_url}
+          alt="user profile thumbnail"/>
+      </div>
+
+      <div className="comment-name-body-date">
+        <Link
+          className="comment-item-profile-link"
+          to={`/profile/${comment.author_id}`}>
+          <span
+            className="comment-item-author-name"
+          >{users[comment.author_id].first_name} {users[comment.author_id].last_name}</span>
+        </Link>
+        <span>{comment.body}</span>
+        <div className="comment-item-date">
+          { comment.created_at }
+        </div>
+
+      </div>
     </div>
     );
   }
