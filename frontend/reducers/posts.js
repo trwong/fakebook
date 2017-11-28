@@ -11,7 +11,14 @@ import {
 } from "./../actions/user";
 import merge from 'lodash/merge';
 
-export default (state = [], action) => {
+const _nullState = {
+  all_ids: [],
+  by_id: {},
+  comments: {},
+  users: {}
+};
+
+export default (state = _nullState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   
@@ -19,6 +26,7 @@ export default (state = [], action) => {
     case RECEIVE_POSTS:
       return action.posts;
     case RECEIVE_POST:
+    debugger;
       newState.all_ids.unshift(action.post.id);
       newState.by_id[action.post.id] = action.post;
       return newState;

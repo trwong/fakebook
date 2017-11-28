@@ -5,23 +5,24 @@ import merge from 'lodash/merge';
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props;
+    // this.state = props;
   }
 
   // componentDidMount() {
   //   this.props.fetchPosts();
   // } 
 
-  componentWillReceiveProps(newProps) {
-    // debugger;
-    this.setState(newProps);
-    // this.render();
-  }
+  // componentWillReceiveProps(newProps) {
+  //   // debugger;
+  //   console.log("feed index state", this.state);
+  //   if (this.props !== newProps) {
+  //     this.setState(newProps);
+  //   }
+  // }
 
   render() {
-    let { all_ids, by_id, users } = this.state.posts;
-
-    console.log(this.state);
+    let { all_ids, by_id, users } = this.props.posts;
+    console.log("this.",this.props);
 
     const display = all_ids ? ( 
       all_ids.map(id =>

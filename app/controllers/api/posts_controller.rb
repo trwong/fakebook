@@ -3,9 +3,7 @@ class Api::PostsController < ApplicationController
     @users = User.all
     @posts = Post.all
     if params[:profileId]
-      @posts = Post.where(
-        "author_id = ? AND recipient_id IS NULL", params[:profileId])
-        .or(Post.where(["recipient_id = ?", params[:profileId]]))
+      @posts = Post.where("author_id = ? AND recipient_id IS NULL", params[:profileId]).or(Post.where(["recipient_id = ?", params[:profileId]]))
     end
   end
 

@@ -101,3 +101,7 @@
 .cover-image-container:hover .cover-fade {
   opacity: 0.7;
 }
+
+.cover-image-container, .profile-image-container {
+  cursor: pointer;
+}

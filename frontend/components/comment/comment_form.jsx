@@ -24,13 +24,13 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    let { postId, currentUser, posts } = this.props;
+    let { postId, currentUser, posts, users } = this.props;
     
     return (
     <div className="comment-form-container">
       <img
         className="profile-thumbnail-small-circle comment-form-profile-thumbnail"
-        src={posts.users[currentUser.id].profile_img_url}
+        src={currentUser.profile_img_url}
         alt="user profile thumbnail"/>
       <form
         className="comment-form-form"

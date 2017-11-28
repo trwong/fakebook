@@ -14,7 +14,7 @@ class ProfileDisplay extends React.Component {
       cover_img_url: "",
     };
 
-    this.profileUser = this.props.users[this.props.ownProps.match.params.userId];
+    this.profileUser = this.props.users[this.props.match.params.userId];
 
     this.profileImageDrop = this.profileImageDrop.bind(this);
     this.handleProfileImageUpload = this.handleProfileImageUpload.bind(this);
@@ -39,18 +39,18 @@ class ProfileDisplay extends React.Component {
     if (newProps.location.pathname !== this.props.location.pathname) {
       this.props.fetchUser(newProps.match.params.userId);
     }
-    if (newProps.users[newUserId].profile_img_url !==
-      this.profileUser.profile_img_url) {
-      this.setState({
-        profile_img_url: newProps.users[newUserId].profile_img_url
-      });
-    }
-    if (newProps.users[newUserId].cover_img_url !==
-      this.profileUser.cover_img_url) {
-      this.setState({
-        cover_img_url: newProps.users[newUserId].cover_img_url
-      });
-    }
+    // if (newProps.users[newUserId].profile_img_url !==
+    //   this.profileUser.profile_img_url) {
+    //   this.setState({
+    //     profile_img_url: newProps.users[newUserId].profile_img_url
+    //   });
+    // }
+    // if (newProps.users[newUserId].cover_img_url !==
+    //   this.profileUser.cover_img_url) {
+    //   this.setState({
+    //     cover_img_url: newProps.users[newUserId].cover_img_url
+    //   });
+    // }
   }
 
   handleProfilePicClick() {
