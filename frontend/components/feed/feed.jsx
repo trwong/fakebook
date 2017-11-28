@@ -8,7 +8,13 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
+    console.log("this.props.match.params.userId", this.props.match.params.userId);
+    if (this.props.match.params.userId) {
+      console.log("inside if");
+      this.props.fetchPosts(this.props.match.params.userId);
+    } else {
+      this.props.fetchPosts();
+    }
   } 
 
   render() {

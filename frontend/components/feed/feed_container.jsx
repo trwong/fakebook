@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import Feed from './feed';
 import { logout } from './../../actions/session';
 import { fetchPosts } from "./../../actions/post";
+import { withRouter } from "react-router-dom";
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
 
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPosts: () => dispatch(fetchPosts()),
+  fetchPosts: profileId => dispatch(fetchPosts(profileId)),
   logout: () => dispatch(logout()),
 });
 
 
-export default connect( mapStateToProps, mapDispatchToProps)(Feed);
+export default withRouter(connect( mapStateToProps, mapDispatchToProps)(Feed));

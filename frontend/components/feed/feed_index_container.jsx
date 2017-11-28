@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FeedIndex from './feed_index';
 import { fetchPosts, editPost, destroyPost } from "./../../actions/post";
+import { withRouter } from "react-router-dom";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   posts: state.posts,
 });
 
@@ -13,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
   destroyPost: postId => dispatch(destroyPost(postId)),
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(FeedIndex);
+  mapDispatchToProps)(FeedIndex));
