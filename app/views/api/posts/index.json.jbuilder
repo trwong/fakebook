@@ -13,8 +13,10 @@ json.by_id do
       user_id_array << comment.author_id
       comment_id_array << comment.id
     end
+    created_at = post.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %e at %l:%M%P")
     json.set! post.id do
-      json.extract! post, :id, :body, :author_id, :recipient_id, :created_at
+      json.extract! post, :id, :body, :author_id, :recipient_id
+      json.created_at created_at
       json.comments post.comments
         .sort_by { |comment| comment.created_at }
         .map { |comment| comment.id }
@@ -39,8 +41,10 @@ end
 json.comments do
   comment_id_array.each do |commentId|
     searchComment = Comment.find(commentId)
+    created_at = searchComment.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%b %e at %l:%M%P")
     json.set! commentId do
-      json.extract! searchComment, :id, :body, :author_id, :post_id, :created_at
+      json.extract! searchComment, :id, :body, :author_id, :post_id
+      json.created_at created_at
     end
   end
 end

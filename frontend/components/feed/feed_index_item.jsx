@@ -7,6 +7,14 @@ class FeedIndexItem extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    let { body, id } = this.props.post;
+    if (body.length < 85) {
+      $(`#feed-item-post-body-${id}`)
+        .addClass("under-eighty-five-characters");
+    }
+  }
+
   render() {
     const { post, user } = this.props;
 
@@ -56,7 +64,9 @@ class FeedIndexItem extends React.Component {
           </div>
           
           <br />
-          {post.body}
+          <span id={`feed-item-post-body-${post.id}`}>
+            {post.body}
+          </span>
         </div>
         <CommentContainer postId={post.id}/>
       </div>

@@ -1,6 +1,9 @@
 .profile-thumbnail-medium-circle {
   height: 40px;
+  width: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .feed-item-container {
@@ -47,4 +50,8 @@
   padding: 12px;
   border: 1px solid rgb(221,223,226);
   box-sizing: border-box;
+}
+
+.under-eighty-five-characters {
+  font-size: 22px;
 }
