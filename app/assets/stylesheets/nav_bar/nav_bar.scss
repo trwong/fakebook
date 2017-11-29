@@ -7,6 +7,11 @@
 .loggedin-nav {
   height: 42px;
   background-color: rgb(69,101,176);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
 }
 
 .loggedin-nav-content {
@@ -72,4 +77,8 @@
   border-color: #29447e #29447e #1a356e;
   color: #fff;
   background-image: linear-gradient(#637bad, #5872a7);
+}
+
+.fakebook-main-body {
+  padding: 42px 0 0 0;
 }

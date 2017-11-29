@@ -19,12 +19,14 @@ export default () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <AuthRoute exact path="/" component={SignupContainer} />
-    <ProtectedRoute
-      path="/feed"
-      component={FeedContainer} />
-    {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
-    <ProtectedRoute
-      path="/profile/:userId"
-      component={ProfileContainer} />
+    <div className="fakebook-main-body">
+      <ProtectedRoute
+        path="/feed"
+        component={FeedContainer} />
+      {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
+      <ProtectedRoute
+        path="/profile/:userId"
+        component={ProfileContainer} />
+    </div>
   </div>
 );
