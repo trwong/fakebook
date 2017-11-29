@@ -55,11 +55,15 @@ class ProfileDisplay extends React.Component {
   }
 
   handleProfilePicClick() {
-    $("#profile-picture-file-input").click();
+    if (this.props.match.params.userId === this.props.currentUser.id) {
+      $("#profile-picture-file-input").click();
+    }
   }
 
   handleCoverPicClick() {
-    $("#cover-picture-file-input").click();
+    if (this.props.match.params.userId === this.props.currentUser.id) {
+      $("#cover-picture-file-input").click();
+    }
   }
 
   profileImageDrop(files) {
