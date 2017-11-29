@@ -48,3 +48,8 @@ table {
   font-family:'Klavika';
   src:font-url('KlavikaBold.woff') format('woff');
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

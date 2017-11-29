@@ -21,3 +21,9 @@ export const deleteSession = () => (
   })
 );
 
+export const fetchCurrentUser = id => (
+  $.ajax({
+    url: "/api/sessions",
+    data: { id }
+  })
+);

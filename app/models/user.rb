@@ -44,13 +44,29 @@ class User < ApplicationRecord
     self.requested_friends.where("status = 'pending'")
   end
 
+  def outgoing_pending_friends_ids
+    outgoing_pending_friends
+      .map{ |friend| friend.id }
+  end
+
   def incoming_pending_friends
     self.received_friends.where("status = 'pending'")
+  end
+
+  def incoming_pending_friends_ids
+    incoming_pending_friends
+      .sort_by{ |friend| friend.created_at }
+      .reverse
+      .map{ |friend| friend.id }
   end
 
   def accepted_friends
     self.requested_friends.where("status = 'accepted'") +
       self.received_friends.where("status = 'accepted'")
+  end
+
+  def accepted_friends_ids
+    accepted_friends.map{ |friend| friend.id }
   end
 
   def denied_friends

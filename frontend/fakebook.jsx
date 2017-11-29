@@ -8,7 +8,8 @@ import configureStore from './store/store';
 import {
     createNewUser,
     login,
-    logout
+    logout,
+    getCurrentUser,
 } from './actions/session';
 import { fetchPosts } from "./actions/post";
 import { fetchUser } from "./actions/user";
@@ -39,4 +40,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.fetchPosts = fetchPosts;
     window.fetchUser = fetchUser;
+    window.getCurrentUser = getCurrentUser;
 });

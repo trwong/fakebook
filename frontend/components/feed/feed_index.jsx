@@ -1,6 +1,6 @@
 import React from 'react';
 import FeedIndexItemContainer from "./feed_index_item_container";
-import merge from 'lodash/merge';
+// import merge from 'lodash/merge';
 
 class FeedIndex extends React.Component {
   constructor(props) {

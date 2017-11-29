@@ -1,4 +1,9 @@
-import { postUser, postSession, deleteSession } from './../util/session_api_util';
+import {
+  postUser,
+  postSession,
+  deleteSession,
+  fetchCurrentUser
+} from './../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -39,4 +44,9 @@ export const logout = () => dispatch => (
   deleteSession()
     .then(() => dispatch(logoutCurrentUser())),
     errors => dispatch(receiveSessionErrors(errors.responseJSON))
+);
+
+export const getCurrentUser = userId => dispatch => (
+  fetchCurrentUser(userId)
+    .then(user => dispatch(receiveCurrentUser(user)))
 );

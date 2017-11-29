@@ -23,10 +23,10 @@ class ProfileDisplay extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.ownProps.match.params.userId);
-    if (this.props.users && this.props.users[this.props.ownProps.match.params.userId]) {
+    this.props.fetchUser(this.props.match.params.userId);
+    if (this.props.users && this.props.users[this.props.match.params.userId]) {
       this.setState({
-        id: this.props.ownProps.match.params.userId,
+        id: this.props.match.params.userId,
         profile_img_url: this.profileUser.profile_img_url,
         cover_img_url: this.profileUser.cover_img_url,
       });
@@ -34,7 +34,7 @@ class ProfileDisplay extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    let newUserId = newProps.ownProps.match.params.userId;
+    let newUserId = newProps.match.params.userId;
     
     if (newProps.location.pathname !== this.props.location.pathname) {
       this.props.fetchUser(newProps.match.params.userId);
@@ -136,6 +136,60 @@ class ProfileDisplay extends React.Component {
       profileFirstName = profileUser.first_name;
       profileLastName = profileUser.last_name;
     }
+
+    let { currentUser, match, destroyFriend, getCurrentUser, postFriend } = this.props;
+
+    let friendButton;
+    let profileUserId = parseInt(match.params.userId);
+    console.log("current user friends", currentUser.friends);
+    if (profileUserId === currentUser.id) {
+      console.log("current user's profile");
+      // current user's profile
+      friendButton = "";
+    } else if (currentUser.friends && 
+        currentUser.friends.includes(profileUserId)) {
+      console.log("profile user is friend of current user");
+      // profile user is friend of current user
+      friendButton = (
+        <button
+          className="profile-add-friend-button uibutton"
+          onClick={() => destroyFriend(currentUser.id, profileUserId)
+            .then(() => getCurrentUser(currentUser.id))}
+          >Unfriend</button>
+      );
+    } else if (currentUser.friend_requested && 
+        currentUser.friend_requested.includes(profileUserId)) {
+      console.log("current user sent request to profile user");
+      // current user sent request to profile user
+      friendButton = (
+        <button
+          className="profile-add-friend-button uibutton"
+          disabled
+          >Friend Request Sent</button>
+      );
+    } else if (currentUser.friend_requests && 
+        currentUser.friend_requests.includes(profileUserId)) {
+      console.log("current user received request from profile user");
+      // current user received request from profile user
+      friendButton = (
+        <button
+          className="profile-add-friend-button uibutton"
+          onClick={() => postFriend(currentUser.id, profileUserId)
+            .then(() => getCurrentUser(currentUser.id))}
+          >Respond to Friend Request</button>
+      );
+    } else {
+      console.log("current user and profile user are not friends");
+      // current user and profile user are not friends
+      friendButton = (
+        <button
+          className="profile-add-friend-button uibutton"
+          onClick={() => postFriend(profileUserId, currentUser.id)
+            .then(() => getCurrentUser(currentUser.id))}
+          >Add Friend</button>
+      );
+    }
+
     
     return (
       <div className="profile-display-container">
@@ -181,9 +235,9 @@ class ProfileDisplay extends React.Component {
         </span>
         <span className="profile-user-name">{ profileFirstName } { profileLastName }</span>
         {/* TODO1 add add friend functionality */}
-        <button
-          className="profile-add-friend-button uibutton">Add Friend</button>
-        
+        {/* <button
+          className="profile-add-friend-button uibutton">Add Friend</button> */}
+        {friendButton}
       </div>
     );
   }

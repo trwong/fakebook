@@ -41,11 +41,13 @@ User.create(first_name: 'Taylor',
 # Users
 genderArr = ["male", "female"]
 
-10.times do
+Faker::UniqueGenerator.clear
+
+15.times do
   faker_name = Faker::GameOfThrones.character
   first_name = faker_name.split.first
   last_name = faker_name.split[1..-1].join
-  email = Faker::Internet.email
+  email = Faker::Internet.unique.email
   password = "password"
   birthday = Faker::Date.birthday(18, 65)
   gender = genderArr[Random.rand(2)]
@@ -76,8 +78,12 @@ Friend.create(requestor_id: 1, receiver_id: 4, status: "accepted")
 Friend.create(requestor_id: 5, receiver_id: 1, status: "accepted")
 Friend.create(requestor_id: 1, receiver_id: 6, status: "pending")
 Friend.create(requestor_id: 1, receiver_id: 7, status: "denied")
+
 Friend.create(requestor_id: 8, receiver_id: 1, status: "denied")
+Friend.create(requestor_id: 10, receiver_id: 1, status: "pending")
+Friend.create(requestor_id: 9, receiver_id: 1, status: "pending")
 
 Friend.create(requestor_id: 4, receiver_id: 6, status: "pending")
+
 Friend.create(requestor_id: 2, receiver_id: 9, status: "accepted")
 Friend.create(requestor_id: 3, receiver_id: 10, status: "pending")
