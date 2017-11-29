@@ -29,31 +29,39 @@ class User < ApplicationRecord
     class_name: :Friend
 
   has_many :requested_friends,
-    through: :received_friendships,
-    source: :requestor
-
-  has_many :received_friends,
     through: :requested_friendships,
     source: :receiver
+
+  has_many :received_friends,
+    through: :received_friendships,
+    source: :requestor
 
   def all_friends
     self.requested_friends + self.received_friends
   end
 
   def outgoing_pending_friends
-    self.requested_friendships.where("status = 'pending'")
+    self.requested_friends.where("status = 'pending'")
   end
 
   def incoming_pending_friends
+    self.received_friends.where("status = 'pending'")
   end
 
   def accepted_friends
+    self.requested_friends.where("status = 'accepted'") +
+      self.received_friends.where("status = 'accepted'")
   end
 
   def denied_friends
+    self.requested_friends.where("status = 'denied'") +
+      self.received_friends.where("status = 'denied'")
   end
 
-
+  def friendship_status(other_user_id)
+    Friend.find_by(requestor_id: self.id, receiver_id: other_user_id)&.status || 
+      Friend.find_by(requestor_id: other_user_id, receiver_id: self.id)&.status
+  end
 
   def password=(password)
     @password = password
