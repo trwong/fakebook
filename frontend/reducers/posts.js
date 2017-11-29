@@ -26,7 +26,6 @@ export default (state = _nullState, action) => {
     case RECEIVE_POSTS:
       return action.posts;
     case RECEIVE_POST:
-    debugger;
       newState.all_ids.unshift(action.post.id);
       newState.by_id[action.post.id] = action.post;
       return newState;

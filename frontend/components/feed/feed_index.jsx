@@ -13,8 +13,6 @@ class FeedIndex extends React.Component {
   // } 
 
   // componentWillReceiveProps(newProps) {
-  //   // debugger;
-  //   console.log("feed index state", this.state);
   //   if (this.props !== newProps) {
   //     this.setState(newProps);
   //   }
@@ -22,7 +20,6 @@ class FeedIndex extends React.Component {
 
   render() {
     let { all_ids, by_id, users } = this.props.posts;
-    console.log("this.",this.props);
 
     const display = all_ids ? ( 
       all_ids.map(id =>

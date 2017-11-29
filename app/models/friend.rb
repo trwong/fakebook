@@ -13,5 +13,4 @@ class Friend < ApplicationRecord
     primary_key: :id,
     foreign_key: :receiver_id,
     class_name: :User
-
 end

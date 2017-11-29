@@ -38,6 +38,7 @@ class ProfileDisplay extends React.Component {
     
     if (newProps.location.pathname !== this.props.location.pathname) {
       this.props.fetchUser(newProps.match.params.userId);
+      this.profileUser = newProps.users[newProps.match.params.userId];
     }
     // if (newProps.users[newUserId].profile_img_url !==
     //   this.profileUser.profile_img_url) {

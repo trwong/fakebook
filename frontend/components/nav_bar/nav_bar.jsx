@@ -26,8 +26,6 @@ class NavBar extends React.Component {
       firstName = this.props.user.first_name;
       userId = this.props.user.id;
       // profile_img_url = this.props.user.profile_img_url;
-      // console.log("new prof img url", this.props.posts.users);
-      // debugger;
       // profile_img_url = this.props.users[userId].profile_img_url;
       profile_img_url = this.props.user.profile_img_url;
     }

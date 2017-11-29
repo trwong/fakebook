@@ -53,6 +53,8 @@ class User < ApplicationRecord
   def denied_friends
   end
 
+
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

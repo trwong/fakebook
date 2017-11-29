@@ -8,10 +8,8 @@ import merge from 'lodash/merge';
 export default (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-  console.log("inside comment reducer");
   switch (action.type) {
     case RECEIVE_COMMENTS:
-      console.log("action in comment reducer", action);
       return action.comments;
     case RECEIVE_COMMENT:
       newState[action.comment.id] = action.comment;

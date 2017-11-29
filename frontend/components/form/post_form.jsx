@@ -37,8 +37,6 @@ class PostForm extends React.Component {
     let paramId = this.props.ownProps.match.params.userId;
     if (paramId && paramId !== this.props.currentUser.id) {
       this.setState({ recipient_id: paramId });
-      // setTimeout( () => (console.log("state", this.state).bind(this), 2000));
-      // console.log(this.state);
     }
 
     this.props.createPost(this.state);

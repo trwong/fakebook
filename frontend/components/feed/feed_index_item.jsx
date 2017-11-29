@@ -16,8 +16,7 @@ class FeedIndexItem extends React.Component {
   }
 
   render() {
-    const { post, user } = this.props;
-
+    const { post, user, users } = this.props;
     let recipientText;
     if (this.props.recipient !== undefined) {
       let { first_name, last_name, id } = this.props.recipient;
@@ -43,7 +42,7 @@ class FeedIndexItem extends React.Component {
           <div className="feed-item-header">
             <img 
               className="profile-thumbnail-medium-circle"
-              src={ user.profile_img_url }
+              src={ users[user.id].profile_img_url }
               alt="profile picture thumbnail"/>
             <span className="feed-item-header-info">
 

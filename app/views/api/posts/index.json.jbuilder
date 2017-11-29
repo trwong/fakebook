@@ -6,9 +6,9 @@ user_id_array = []
 comment_id_array = []
 
 json.by_id do
-  if @posts.empty?
-    return {}
-  else
+  # if @posts.empty?
+  #   return {}
+  # else
     @posts.each do |post|
       user_id_array << post.author_id
       user_id_array << post.recipient_id if post.recipient_id
@@ -25,7 +25,7 @@ json.by_id do
           .map { |comment| comment.id }
       end
     end
-  end
+  # end
 end
 
 json.all_ids sorted_post_ids

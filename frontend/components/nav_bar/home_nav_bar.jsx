@@ -66,11 +66,9 @@ class HomeNavBar extends React.Component {
   // }
 
   addErrorsOutline() {
-    console.log(this.props.errors);
     if (this.props.errors) {
       this.props.errors.forEach( error => {
         if (error.includes("username")) {
-          console.log("found error");
           $(".session-input-field").addClass("highlight-red");
         }
       }

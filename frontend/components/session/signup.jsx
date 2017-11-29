@@ -43,12 +43,9 @@ class Signup extends React.Component {
   }
 
   addErrorsOutline() {
-    console.log(this.props.errors);
     if (this.props.errors) {
       this.props.errors.forEach(error => {
-        console.log(error);
         if (error.includes("Email")) {
-          console.log("email error");
           $("#email").addClass("highlight-red");
         } else if (error.includes("First name")) {
           $("#firstname").addClass("highlight-red");
