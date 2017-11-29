@@ -137,7 +137,14 @@ class ProfileDisplay extends React.Component {
       profileLastName = profileUser.last_name;
     }
 
-    let { currentUser, match, destroyFriend, getCurrentUser, postFriend } = this.props;
+    let {
+      currentUser,
+      match,
+      destroyFriend,
+      getCurrentUser,
+      postFriend,
+      patchFriend
+     } = this.props;
 
     let friendButton;
     let profileUserId = parseInt(match.params.userId);
@@ -172,11 +179,29 @@ class ProfileDisplay extends React.Component {
       console.log("current user received request from profile user");
       // current user received request from profile user
       friendButton = (
-        <button
-          className="profile-add-friend-button uibutton"
-          onClick={() => postFriend(currentUser.id, profileUserId)
-            .then(() => getCurrentUser(currentUser.id))}
-          >Respond to Friend Request</button>
+        <div className="profile-respond-friend-request">
+
+          <button
+            className="profile-add-friend-button uibutton profile-respond-friend-request-button"
+            disabled
+            >Respond to Friend Request</button>
+
+          <div className="profile-respond-friend-request-pop-up">
+            <div className="profile-respond-arrow-up"></div>
+            <span
+              className="profile-respond-friend-request-confirm"
+              onClick={() => patchFriend(currentUser.id, profileUserId, "accepted")
+                .then(() => getCurrentUser(currentUser.id))}>
+              Confirm
+            </span>
+            <span
+              className="profile-respond-friend-request-delete"
+              onClick={() => destroyFriend(currentUser.id, profileUserId)
+                .then(() => getCurrentUser(currentUser.id))}>
+              Delete Request
+            </span>
+          </div>
+        </div>
       );
     } else {
       console.log("current user and profile user are not friends");

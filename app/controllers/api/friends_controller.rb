@@ -34,7 +34,7 @@ class Api::FriendsController < ApplicationController
       receiver_id: params[:user_id],
       requestor_id: params[:id]
     )
-    if @friend.destroy
+    if @friend.try(:destroy)
       render json: {}
       return
     else
@@ -42,7 +42,7 @@ class Api::FriendsController < ApplicationController
       receiver_id: params[:id],
       requestor_id: params[:user_id]
       )
-      if @friend.destroy
+      if @friend.try(:destroy)
         render json: {}
       else
         render json: @friend.errors.full_messages, status: 422
