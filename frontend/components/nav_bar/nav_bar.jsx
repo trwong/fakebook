@@ -35,10 +35,12 @@ class NavBar extends React.Component {
         <div className="loggedin-nav-content">
 
           <div className="loggedin-nav-left">
-            <img
-              className="loggedin-nav-logo"
-              src="/assets/facebook-f-logo.jpg"
-              alt=""/>
+            <Link to="/feed" >
+              <img
+                className="loggedin-nav-logo"
+                src="/assets/facebook-f-logo.jpg"
+                alt=""/>
+            </Link>
             <input
               type="text"
               placeholder="Search" />

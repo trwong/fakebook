@@ -42,7 +42,7 @@ User.create(first_name: 'Taylor',
 genderArr = ["male", "female"]
 
 10.times do
-  faker_name = Faker::RickAndMorty.character
+  faker_name = Faker::GameOfThrones.character
   first_name = faker_name.split.first
   last_name = faker_name.split[1..-1].join
   email = Faker::Internet.email
@@ -53,17 +53,18 @@ genderArr = ["male", "female"]
 end
 
 20.times do
-  body = Faker::RickAndMorty.quote
   author_id = Random.rand(User.all.count) + 1
   recipient_id = Random.rand(User.all.count) + 1
   until recipient_id != author_id
     recipient_id = Random.rand(User.all.count) + 1
   end
+  body = Faker::ChuckNorris.fact
+  body.count("Chuck Norris").times{ body.sub!("Chuck Norris", "#{User.find(recipient_id).first_name} #{User.find(recipient_id).last_name}") }
   Post.create(body: body, author_id: author_id, recipient_id: recipient_id)
 end
 
 50.times do
-  body = Faker::RickAndMorty.quote
+  body = Faker::MostInterestingManInTheWorld.quote
   author_id = Random.rand(User.all.count) + 1
   post_id = Random.rand(Post.all.count) + 1
   Comment.create(body: body, author_id: author_id, post_id: post_id)
