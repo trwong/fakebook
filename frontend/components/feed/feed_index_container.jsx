@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => ({
   posts: state.posts,
+  users: state.users,
 });
 
 const mapDispatchToProps = dispatch => ({

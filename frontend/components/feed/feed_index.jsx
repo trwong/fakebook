@@ -19,7 +19,8 @@ class FeedIndex extends React.Component {
   // }
 
   render() {
-    let { all_ids, by_id, users } = this.props.posts;
+    let { all_ids, by_id } = this.props.posts;
+    let { users } = this.props;
 
     const display = all_ids ? ( 
       all_ids.map(id =>
