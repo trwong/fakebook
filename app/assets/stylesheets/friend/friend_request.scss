@@ -1,0 +1,47 @@
+.friend-request-index-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgb(221,223,226);
+  box-shadow: 3px 3px 8px -2px #888888;
+
+}
+
+.friend-request-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.friend-request-name {
+  margin: 0 0 0 8px;
+  color: #3955a9;
+}
+
+.friend-request-confirm-button, .friend-request-delete-button {
+  height: 24px;
+  padding: 0 8px;
+  font-weight: bold;
+  font-size: 11.5px;
+}
+
+.friend-request-confirm-button {
+  width: 65px;
+  margin: 0 4px 0 0;
+  color: white;
+  background-color: rgb(69,101,176);
+}
+
+.friend-request-confirm-button:hover {
+  background-color: rgb(57,86,151);
+}
+
+.friend-request-delete-button {
+  width: 108px;
+  background-color: rgb(246,247,249);
+}
+
+.friend-request-delete-button:hover {
+  background-color: rgb(233,235,238);
+}

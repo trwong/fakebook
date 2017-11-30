@@ -26,22 +26,31 @@ class FriendRequestIndex extends React.Component {
 
     return (
       <div className="friend-request-index-item">
-        <Link to={`/profile/${id}`}>
-          <img
-            className="profile-thumbnail-medium-circle"
-            src={profile_img_url}
-            alt="user profile image thumbnail"/>
-          <span>{first_name} {last_name}</span>
-        </Link>
-        {/* TODO3 Add mutual friends */}
-        <button
-          className="friend-request-confirm-button"
-          onClick={this.handleRequest("confirm")}
-          >Confirm</button>
-        <button
-          className="friend-request-confirm-button"
-          onClick={this.handleRequest("delete")}
-          >Delete Request</button>
+        <div className="friend-request-left">
+          <Link 
+            className="friend-request-link"
+            to={`/profile/${id}`}>
+            <img
+              className="profile-thumbnail-medium-circle"
+              src={profile_img_url}
+              alt="user profile image thumbnail"/>
+            <span
+              className="friend-request-name"
+              >{first_name} {last_name}</span>
+          </Link>
+          {/* TODO3 Add mutual friends */}
+        </div>
+        
+        <div className="friend-request-right">
+          <button
+            className="friend-request-confirm-button"
+            onClick={this.handleRequest("confirm")}
+            >Confirm</button>
+          <button
+            className="friend-request-delete-button"
+            onClick={this.handleRequest("delete")}
+            >Delete Request</button>
+        </div>
       </div>
     );
   }

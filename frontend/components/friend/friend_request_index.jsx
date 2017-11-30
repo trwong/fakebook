@@ -18,7 +18,7 @@ class FriendRequestIndexItem extends React.Component {
           key={friendId} />
       ))
     ) : (
-      <div>No Friend Requests</div>
+      <div>No New Requests</div>
     );
 
     return (

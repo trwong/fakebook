@@ -99,7 +99,7 @@
   width: 430px;
   background-color: white;
   border: 1px solid rgb(221,223,226);
-
+  border-radius: 3px;
 }
 
 .nav-friend-requests-pop-up > div {
@@ -121,4 +121,5 @@
 
 .nav-friend-request-header {
   border-bottom: 1px solid rgb(221,223,226);  
+  padding: 8px 12px;
 }
