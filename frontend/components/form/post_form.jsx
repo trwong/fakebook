@@ -41,6 +41,7 @@ class PostForm extends React.Component {
 
     this.props.createPost(this.state);
     document.getElementById('post-form-text-area').value = "";
+
   }
 
   render() {

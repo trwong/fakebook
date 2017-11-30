@@ -52,10 +52,16 @@ export default (state = _nullState, action) => {
       // newState.by_id[action.comment.post_id].comments.push(action.comment.id);
       // newState.comments[action.comment.id] = action.comment;
       // return newState;
-      postId = newState.comments[action.comment.id].post_id;
-      index = newState.by_id[postId].comments.indexOf(action.comment.id);
-      if (index >= 0) {
-        newState.by_id[postId].comments.splice(index, 1);
+
+      // postId = newState.comments[action.comment.id].post_id;
+      postId = action.comment.post_id;
+      if (newState.by_id[postId].comments) {
+        index = newState.by_id[postId].comments.indexOf(action.comment.id);
+        if (index >= 0) {
+          newState.by_id[postId].comments.splice(index, 1);
+        }
+      } else {
+        newState.by_id[postId].comments = [];
       }
 
       newState.by_id[postId].comments.unshift(action.comment.id);
