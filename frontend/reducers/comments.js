@@ -15,7 +15,7 @@ export default (state = {}, action) => {
       newState[action.comment.id] = action.comment;
       return newState;
     case REMOVE_COMMENT:
-      newState[action.commentId] = undefined;
+      delete newState[action.commentId];
       return newState;
     default:
       return state;

@@ -131,7 +131,6 @@ class FeedIndexItem extends React.Component {
             </span>
             {showModal}
             <div
-              // onClick={this.handleModal}
               id={`feed-item-edit-modal-${post.id}`}
               className="feed-item-edit-pop-up toggle-hide">
               <span

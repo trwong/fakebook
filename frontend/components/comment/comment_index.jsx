@@ -19,7 +19,7 @@ class CommentIndex extends React.Component {
     let commentsMap = commentsArr ? (
       commentsArr.map( commentId => (
           <CommentIndexItemContainer
-            commentId={commentId}
+            comment={this.state.posts.comments[commentId]}
             key={commentId} />
         ))
     ) : ("");

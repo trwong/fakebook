@@ -45,5 +45,5 @@ export const updateComment = (postId, comment) => dispatch => {
 };
 
 export const destroyComment = (postId, commentId) => dispatch => {
-  destroyComment(postId, commentId).then( () => dispatch(removeComment(commentId)));
+  deleteComment(postId, commentId).then( () => dispatch(removeComment(commentId)));
 };
