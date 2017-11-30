@@ -23,6 +23,7 @@ class NavBar extends React.Component {
 
   toggleFriendRequestModal() {
     document.getElementById("nav-friend-requests-pop-up").classList.toggle("hide-modal");
+    document.getElementById("click-to-hide-friend-requests").classList.toggle("hide-modal");
   }
   
   render() {
@@ -107,6 +108,11 @@ class NavBar extends React.Component {
           </div>
           
         </div>
+        <div
+          onClick={this.toggleFriendRequestModal}
+          className="hide-modal"
+          id="click-to-hide-friend-requests"
+        ></div>
       </header>
     );
   }
