@@ -154,16 +154,7 @@
   border-top: 1px solid rgb(41,73,121);
   border-bottom: 1px solid rgb(41,73,121);
   color: white;
-  // transition: 0.49s;
 }
-
-// .profile-respond-friend-request-delete:hover {
-//   background: rgb(69,101,176);
-//   border-top: 1px solid rgb(41,73,121);
-//   border-bottom: 1px solid rgb(41,73,121);
-//   color: white;
-//   // transition: 0.49s;
-// }
 
 .profile-respond-arrow-up {
   width: 0; 
@@ -175,4 +166,49 @@
   top: -8px;
   left: 10px;
   z-index: 1;
+}
+
+.profile-display-nav-bar {
+  position: absolute;
+  bottom: -3px;
+  left: 200px;
+  display: flex;
+  height: 55px;
+  align-items: center;
+}
+
+.profile-display-nav-link {
+  position: relative;
+  color: rgb(61,87,150);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 17px;
+  border-right: 1px solid rgb(221,223,226);
+  
+}
+
+.profile-display-nav-link:first-child {
+  border-left: 1px solid rgb(221,223,226);
+}
+
+.profile-nav-arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(233,235,238);
+  position: absolute;
+  bottom: -1px;
+  left: calc(50% - 10px);
+  z-index: 5;
+  display: none;
+}
+
+.profile-nav-active-timeline > div {
+  display: inline;
+}
+
+.profile-nav-active-friends > div {
+  display: inline;
 }

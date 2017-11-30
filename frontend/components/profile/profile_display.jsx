@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import { NavLink } from 'react-router-dom';
 
 const CLOUDINARY_UPLOAD_PRESET = "umzpk5ol";
 const CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/trwong/image/upload";
@@ -266,6 +267,26 @@ class ProfileDisplay extends React.Component {
         {/* <button
           className="profile-add-friend-button uibutton">Add Friend</button> */}
         {friendButton}
+
+        <div className="profile-display-nav-bar">
+          <NavLink
+            className="profile-display-nav-link"
+            exact
+            to={`/profile/${profileUser.id}`}
+            activeClassName="profile-nav-active-timeline"
+            activeStyle={{ color: 'rgb(75, 79, 86)' }}>
+            Timeline
+            <div className="profile-nav-arrow-up profile-nav-active-timeline"></div>
+          </NavLink>
+          <NavLink
+            className="profile-display-nav-link"
+            to={`/profile/${profileUser.id}/friends`}
+            activeClassName="profile-nav-active-friends"
+            activeStyle={{ color: 'rgb(75, 79, 86)' }}>
+            Friends
+            <div className="profile-nav-arrow-up profile-nav-active-friends"></div>
+          </NavLink>
+        </div>
       </div>
     );
   }
