@@ -5,6 +5,11 @@ import CommentContainer from './../comment/comment_container.jsx';
 class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   body: this.props.post.body
+    // };
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -13,6 +18,14 @@ class FeedIndexItem extends React.Component {
       $(`#feed-item-post-body-${id}`)
         .addClass("under-eighty-five-characters");
     }
+  }
+
+  handleEdit() {
+
+  }
+
+  handleDelete() {
+    this.props.destroyPost(this.props.post.id);
   }
 
   render() {
@@ -58,12 +71,27 @@ class FeedIndexItem extends React.Component {
               
               <span>{post.created_at}</span>
             </span>
+            <i
+              className="fa fa-ellipsis-h feed-item-ellipsis"
+              aria-hidden="true"></i>
+            <div className="feed-item-edit-pop-up">
+              <span
+                onClick={this.handleEdit}
+                className="feed-item-edit-button"
+                >Edit Post</span>
+              <span
+                onClick={this.handleDelete}
+                className="feed-item-delete-button"
+                >Delete</span>
+            </div>
           </div>
-          
           <br />
           <span id={`feed-item-post-body-${post.id}`}>
             {post.body}
           </span>
+          {/* <form action="">
+            <textarea value=""></textarea>
+          </form> */}
         </div>
         <CommentContainer postId={post.id}/>
       </div>

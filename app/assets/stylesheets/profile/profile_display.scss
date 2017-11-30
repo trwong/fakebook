@@ -149,7 +149,7 @@
   cursor: pointer;
 }
 
-.profile-respond-friend-request-confirm:hover {
+.profile-respond-friend-request-confirm:hover, .profile-respond-friend-request-delete:hover {
   background: rgb(69,101,176);
   border-top: 1px solid rgb(41,73,121);
   border-bottom: 1px solid rgb(41,73,121);
@@ -157,13 +157,13 @@
   // transition: 0.49s;
 }
 
-.profile-respond-friend-request-delete:hover {
-  background: rgb(69,101,176);
-  border-top: 1px solid rgb(41,73,121);
-  border-bottom: 1px solid rgb(41,73,121);
-  color: white;
-  // transition: 0.49s;
-}
+// .profile-respond-friend-request-delete:hover {
+//   background: rgb(69,101,176);
+//   border-top: 1px solid rgb(41,73,121);
+//   border-bottom: 1px solid rgb(41,73,121);
+//   color: white;
+//   // transition: 0.49s;
+// }
 
 .profile-respond-arrow-up {
   width: 0; 

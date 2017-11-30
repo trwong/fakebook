@@ -4,11 +4,11 @@ class Post < ApplicationRecord
   belongs_to :user,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: :User,
-    dependent: :destroy
-  
-  has_many :comments,
+    class_name: :User
+    
+    has_many :comments,
     primary_key: :id,
     foreign_key: :post_id,
-    class_name: :Comment
+    class_name: :Comment,
+    dependent: :destroy
 end

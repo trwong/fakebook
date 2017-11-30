@@ -34,7 +34,8 @@ export default (state = _nullState, action) => {
       if (index >= 0) {
         newState.all_ids.splice( index, 1 );
       }
-      newState.by_id[action.postId] = undefined;
+      // newState.by_id[action.postId] = undefined;
+      delete newState.by_id[action.postId];
       return newState;
 
     case RECEIVE_COMMENT:
