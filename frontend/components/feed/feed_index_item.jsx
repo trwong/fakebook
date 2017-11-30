@@ -20,6 +20,7 @@ class FeedIndexItem extends React.Component {
     this.toggleBodyEdit = this.toggleBodyEdit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleModal = this.handleModal.bind(this);
+    this.handleModalAndToggle = this.handleModalAndToggle.bind(this);
   }
 
   componentDidMount() {
@@ -57,6 +58,11 @@ class FeedIndexItem extends React.Component {
     document
       .getElementById(`click-to-hide-modal-${this.props.post.id}`)
       .classList.toggle("toggle-hide");
+  }
+
+  handleModalAndToggle() {
+    this.handleModal();
+    this.toggleBodyEdit();
   }
 
   render() {
@@ -129,7 +135,7 @@ class FeedIndexItem extends React.Component {
               id={`feed-item-edit-modal-${post.id}`}
               className="feed-item-edit-pop-up toggle-hide">
               <span
-                onClick={this.toggleBodyEdit}
+                onClick={this.handleModalAndToggle}
                 className="feed-item-edit-button"
                 >Edit Post</span>
               <span

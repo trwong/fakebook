@@ -37,6 +37,7 @@ class NavBar extends React.Component {
       userId = this.props.user.id;
       profile_img_url = this.props.user.profile_img_url;
       notifications = this.props.user.friend_requests.length;
+      if (notifications === 0) notifications = "";
       // debugger;
     }
 
