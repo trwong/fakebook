@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import {
   AuthRoute,
   ProtectedRoute,
+  ExactAuthRoute,
+  ExactProtectedRoute,
 } from './../util/route_utils';
 
 import FeedContainer from './feed/feed_container';
@@ -11,6 +13,8 @@ import HomeNavBarContainer from './nav_bar/home_nav_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import ProfileContainer from './profile/profile_container';
 import NewsFeed from './news_feed/news_feed_container';
+import ProfileDisplayContainer from './profile/profile_display_container';
+import FriendsContainer from './friend/friends_container';
 
 
 export default () => (
@@ -27,7 +31,13 @@ export default () => (
       {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
       <ProtectedRoute
         path="/profile/:userId"
+        component={ProfileDisplayContainer} />
+      <ExactProtectedRoute
+        path="/profile/:userId"
         component={ProfileContainer} />
+      <ProtectedRoute
+        path="/profile/:userId/friends"
+        component={FriendsContainer} />
     </div>
   </div>
 );

@@ -12,7 +12,7 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <ProfileDisplayContainer />
+        {/* <ProfileDisplayContainer /> */}
         <div className="profile-body-container">
           <ProfileLeftAsideContainer />
           <FeedContainer />

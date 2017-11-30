@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FriendRequestIndexContainer from './../friend/friend_request_index_container';
+import FriendRequestIndexContainer from './../friend_request/friend_request_index_container';
 
 class NavBar extends React.Component {
   constructor(props) {
