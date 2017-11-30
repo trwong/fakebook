@@ -1,0 +1,60 @@
+.profile-friend-item-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-friend-index {
+  background-color: white;
+  width: 325px;
+  padding: 0 5px 4px 5px;
+  border: 1px solid rgb(221,223,226);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.profile-friends-icon {
+  background-color: rgb(243, 1, 106);
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  margin-right: 10px; 
+}
+
+.profile-circle-icon {
+  color: gray;
+  vertical-align: top;
+  margin: 0 7px;
+}
+
+.fa-circle:before {
+  font-size: 5px;
+}
+
+.profile-friend-index-header {
+  padding: 12px 0;
+  margin: 0 12px;
+}
+
+.profile-friend-index-item:nth-child(3n + 2) {
+  margin: 0 5px;
+}
+
+.profile-friend-dot-container {
+  line-height: 0px;
+}
+
+.profile-friend-count {
+  color: gray;
+}
+
+.profile-friend-link {
+  text-decoration: none;
+}
+
+.profile-friends-header-text {
+  color: black;
+}
+
+.profile-friends-header-text:hover {
+  text-decoration: underline;
+}

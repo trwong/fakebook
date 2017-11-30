@@ -1,0 +1,27 @@
+.profile-friend-index-item-profile-picture {
+  height: 101px;
+  width: 101px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-friend-name {
+  font-size: 12px;
+}
+
+.profile-friend-index-item {
+  position: relative;
+}
+
+.profile-friend-name {
+  word-wrap: normal;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  color: black;
+  text-decoration: none;
+}
+
+.profile-friend-index-link {
+  text-decoration: none;
+}

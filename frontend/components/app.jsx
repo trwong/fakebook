@@ -10,6 +10,7 @@ import SignupContainer from './session/signup_container';
 import HomeNavBarContainer from './nav_bar/home_nav_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import ProfileContainer from './profile/profile_container';
+import NewsFeed from './news_feed/news_feed_container';
 
 
 export default () => (
@@ -22,7 +23,7 @@ export default () => (
     <div className="fakebook-main-body">
       <ProtectedRoute
         path="/feed"
-        component={FeedContainer} />
+        component={NewsFeed} />
       {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
       <ProtectedRoute
         path="/profile/:userId"
