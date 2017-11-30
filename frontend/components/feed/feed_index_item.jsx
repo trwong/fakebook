@@ -19,6 +19,7 @@ class FeedIndexItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.toggleBodyEdit = this.toggleBodyEdit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +48,15 @@ class FeedIndexItem extends React.Component {
   toggleBodyEdit() {
     document.getElementById(`feed-item-post-body-${this.props.post.id}`).classList.toggle("toggle-hide");
     document.getElementById(`feed-item-form-${this.props.post.id}`).classList.toggle("toggle-hide");
+  }
+
+  handleModal() {
+    document
+      .getElementById(`feed-item-edit-modal-${this.props.post.id}`)
+      .classList.toggle("toggle-hide");
+    document
+      .getElementById(`click-to-hide-modal-${this.props.post.id}`)
+      .classList.toggle("toggle-hide");
   }
 
   render() {
@@ -105,9 +115,13 @@ class FeedIndexItem extends React.Component {
               <span>{post.created_at}</span>
             </span>
             <i
+              onClick={this.handleModal}
               className="fa fa-ellipsis-h feed-item-ellipsis"
               aria-hidden="true"></i>
-            <div className="feed-item-edit-pop-up">
+            <div
+              // onClick={this.handleModal}
+              id={`feed-item-edit-modal-${post.id}`}
+              className="feed-item-edit-pop-up toggle-hide">
               <span
                 onClick={this.toggleBodyEdit}
                 className="feed-item-edit-button"
@@ -139,6 +153,11 @@ class FeedIndexItem extends React.Component {
                 >Done Editing</button>
             </div>
           </form>
+          <div
+            onClick={this.handleModal}
+            className="click-to-hide-modal toggle-hide"
+            id={`click-to-hide-modal-${post.id}`}
+          ></div>
         </div>
         <CommentContainer postId={post.id}/>
       </div>
