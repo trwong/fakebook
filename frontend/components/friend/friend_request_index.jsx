@@ -9,10 +9,13 @@ class FriendRequestIndexItem extends React.Component {
 
   render() {
     // debugger;
-    let { users, friend_requests } = this.props;
+    let { users, currentUser } = this.props;
+    let friend_requests;
 
-    let display = (friend_requests && friend_requests.length > 0) ? (
-      friend_requests.map(friendId => (
+    let display = (currentUser &&
+      currentUser.friend_requests &&
+      currentUser.friend_requests.length > 0) ? (
+      currentUser.friend_requests.map(friendId => (
         <FriendRequestIndexItemContainer
           user={users[friendId]}
           key={friendId} />

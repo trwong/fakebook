@@ -4,8 +4,6 @@
   align-items: center;
   padding: 6px 12px;
   border-bottom: 1px solid rgb(221,223,226);
-  box-shadow: 3px 3px 8px -2px #888888;
-
 }
 
 .friend-request-link {
@@ -38,6 +36,7 @@
 }
 
 .friend-request-delete-button {
+  font-weight: 550;
   width: 108px;
   background-color: rgb(246,247,249);
 }

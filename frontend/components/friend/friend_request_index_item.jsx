@@ -22,7 +22,17 @@ class FriendRequestIndex extends React.Component {
 
   render() {
     let { user } = this.props;
-    let { profile_img_url, first_name, last_name, id } = user;
+    let profile_img_url;
+    let first_name;
+    let last_name;
+    let id;
+
+    if (user) {
+      profile_img_url = user.profile_img_url;
+      first_name = user.first_name;
+      last_name = user.last_name;
+      id = user.id;
+    }
 
     return (
       <div className="friend-request-index-item">

@@ -8,10 +8,13 @@ import {
 } from './../../util/friend_utils';
 
 
-const mapStateToProps = state => ({
-  users: state.users,
-  friend_requests: state.session.currentUser.friend_requests
-});
+const mapStateToProps = state => {
+  // debugger
+  return ({
+    users: state.users,
+    currentUser: state.session.currentUser
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchFriends: userId => fetchFriends(userId),

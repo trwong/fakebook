@@ -16,20 +16,27 @@ class NavBar extends React.Component {
   componentDidMount() {
     // fetching users to the rest of the app has access to it
     this.props.fetchUsers();
-    this.props.getCurrentUser(this.props.user.id);
+    if (this.props.user) {
+      this.props.getCurrentUser(this.props.user.id);
+    }
+  }
+
+  toggleFriendRequestModal() {
+    document.getElementById("nav-friend-requests-pop-up").classList.toggle("hide-modal");
   }
   
   render() {
     let firstName;
     let userId;
     let profile_img_url;
+    let notifications;
     // TODO refactor below
     if (this.props.user && Object.keys(this.props.users).length !== 0) {
       firstName = this.props.user.first_name;
       userId = this.props.user.id;
-      // profile_img_url = this.props.user.profile_img_url;
-      // profile_img_url = this.props.users[userId].profile_img_url;
       profile_img_url = this.props.user.profile_img_url;
+      // notifications = this.props.user.friend_requests.length;
+      // debugger;
     }
 
     return (
@@ -72,11 +79,18 @@ class NavBar extends React.Component {
             <div
               className="loggedin-nav-friend-requests">
               <img
-              className="loggedin-nav-friend-requests-icon"
+                onClick={this.toggleFriendRequestModal}
+                className="loggedin-nav-friend-requests-icon"
                 src="http://res.cloudinary.com/trwong/image/upload/v1512001725/Screen_Shot_2017-11-29_at_4.26.00_PM_vodfbo.png"
                 alt="friend request icon"/>
-
-              <div className="nav-friend-requests-pop-up">
+              <span
+                onClick={this.toggleFriendRequestModal}
+                className="friend-request-notification">
+                {/* {notifications} */}
+              </span>
+              <div
+                className="nav-friend-requests-pop-up hide-modal"
+                id="nav-friend-requests-pop-up">
                 <div className="nav-friend-request-arrow-up"></div>
                 <div className="nav-friend-request-header">Friend Requests</div>
                 <FriendRequestIndexContainer />

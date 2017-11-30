@@ -90,6 +90,7 @@
 .loggedin-nav-friend-requests-icon {
   position: relative;
   top: 3px;
+  cursor: pointer;
 }
 
 .nav-friend-requests-pop-up {
@@ -100,6 +101,7 @@
   background-color: white;
   border: 1px solid rgb(221,223,226);
   border-radius: 3px;
+  box-shadow: 3px 3px 8px -2px #888888;
 }
 
 .nav-friend-requests-pop-up > div {
@@ -122,4 +124,8 @@
 .nav-friend-request-header {
   border-bottom: 1px solid rgb(221,223,226);  
   padding: 8px 12px;
+}
+
+.hide-modal{
+  visibility: hidden;
 }
