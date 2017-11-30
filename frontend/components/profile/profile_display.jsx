@@ -20,6 +20,9 @@ class ProfileDisplay extends React.Component {
     this.handleProfileImageUpload = this.handleProfileImageUpload.bind(this);
     this.coverImageDrop = this.coverImageDrop.bind(this);
     this.handleCoverImageUpload = this.handleCoverImageUpload.bind(this);
+    this.handleProfilePicClick = this.handleProfilePicClick.bind(this);
+    this.handleCoverPicClick = this.handleCoverPicClick.bind(this);
+    
   }
 
   componentDidMount() {
@@ -55,13 +58,13 @@ class ProfileDisplay extends React.Component {
   }
 
   handleProfilePicClick() {
-    if (this.props.match.params.userId === this.props.currentUser.id) {
+    if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {
       $("#profile-picture-file-input").click();
     }
   }
 
   handleCoverPicClick() {
-    if (this.props.match.params.userId === this.props.currentUser.id) {
+    if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {
       $("#cover-picture-file-input").click();
     }
   }

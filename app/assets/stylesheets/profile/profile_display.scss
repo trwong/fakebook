@@ -131,7 +131,7 @@
   background: white;
   border: 1px solid rgb(139,139,139);
   transition: all 0s ease 1s;
-  box-shadow: 3px 3px 10px #888888;
+  box-shadow: 3px 3px 8px -2px #888888;
 }
 
 .profile-respond-friend-request:hover .profile-respond-friend-request-pop-up,
@@ -152,13 +152,13 @@
 .profile-respond-friend-request-confirm:hover {
   background: rgb(69,101,176);
   color: white;
-  transition: 0.49s;
+  // transition: 0.49s;
 }
 
 .profile-respond-friend-request-delete:hover {
   background: rgb(69,101,176);
   color: white;
-  transition: 0.49s;
+  // transition: 0.49s;
 }
 
 .profile-respond-arrow-up {
