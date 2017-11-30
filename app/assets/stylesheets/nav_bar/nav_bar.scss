@@ -129,3 +129,14 @@
 .hide-modal{
   visibility: hidden;
 }
+
+.friend-request-notification {
+  font-size: 13px;
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  padding: 0 2px;
+  position: absolute;
+  right: 7px;
+  cursor: pointer;
+}

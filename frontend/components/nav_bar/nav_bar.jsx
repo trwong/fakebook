@@ -35,7 +35,7 @@ class NavBar extends React.Component {
       firstName = this.props.user.first_name;
       userId = this.props.user.id;
       profile_img_url = this.props.user.profile_img_url;
-      // notifications = this.props.user.friend_requests.length;
+      notifications = this.props.user.friend_requests.length;
       // debugger;
     }
 
@@ -86,7 +86,7 @@ class NavBar extends React.Component {
               <span
                 onClick={this.toggleFriendRequestModal}
                 className="friend-request-notification">
-                {/* {notifications} */}
+                {notifications}
               </span>
               <div
                 className="nav-friend-requests-pop-up hide-modal"
