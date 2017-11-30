@@ -92,6 +92,15 @@ class FeedIndexItem extends React.Component {
       );
     }
 
+    let showModal = (post.author_id === this.props.currentUser.id) ? (
+      <i
+        onClick={this.handleModal}
+        className="fa fa-ellipsis-h feed-item-ellipsis"
+        aria-hidden="true"></i>
+    ) : (
+      ""
+    );
+
     return (
       <div className="feed-item-container">
         <div className="feed-comment-divider">
@@ -114,10 +123,7 @@ class FeedIndexItem extends React.Component {
               
               <span>{post.created_at}</span>
             </span>
-            <i
-              onClick={this.handleModal}
-              className="fa fa-ellipsis-h feed-item-ellipsis"
-              aria-hidden="true"></i>
+            {showModal}
             <div
               // onClick={this.handleModal}
               id={`feed-item-edit-modal-${post.id}`}
