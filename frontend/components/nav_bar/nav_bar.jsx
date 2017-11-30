@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FriendRequestIndexContainer from './../friend/friend_request_index_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -66,6 +67,20 @@ class NavBar extends React.Component {
               <Link
                 className="loggedin-nav-profile-link"
                 to="/feed">Home</Link>
+            </div>
+
+            <div
+              className="loggedin-nav-friend-requests">
+              <img
+              className="loggedin-nav-friend-requests-icon"
+                src="http://res.cloudinary.com/trwong/image/upload/v1512001725/Screen_Shot_2017-11-29_at_4.26.00_PM_vodfbo.png"
+                alt="friend request icon"/>
+
+              <div className="nav-friend-requests-pop-up">
+                <div className="nav-friend-request-arrow-up"></div>
+                <div className="nav-friend-request-header">Friend Requests</div>
+                <FriendRequestIndexContainer />
+              </div>
             </div>
 
             <div

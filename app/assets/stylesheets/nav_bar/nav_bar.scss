@@ -80,5 +80,45 @@
 }
 
 .fakebook-main-body {
-  padding: 42px 0 0 0;
+  padding: 41px 0 0 0;
+}
+
+.loggedin-nav-friend-requests {
+  position: relative;
+}
+
+.loggedin-nav-friend-requests-icon {
+  position: relative;
+  top: 3px;
+}
+
+.nav-friend-requests-pop-up {
+  position: absolute;
+  top: 36px;
+  left: -325px;
+  width: 430px;
+  background-color: white;
+  border: 1px solid rgb(221,223,226);
+
+}
+
+.nav-friend-requests-pop-up > div {
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.nav-friend-request-arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  position: absolute;
+  top: -8px;
+  right: 74px;
+  z-index: 1;
+}
+
+.nav-friend-request-header {
+  border-bottom: 1px solid rgb(221,223,226);  
 }
