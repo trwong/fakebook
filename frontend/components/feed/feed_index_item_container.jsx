@@ -5,7 +5,7 @@ import { editPost, destroyPost } from "./../../actions/post";
 
 const mapStateToProps = state => ({
   users: state.users,
-  // currentUser: state.session.currentUser,
+  currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({

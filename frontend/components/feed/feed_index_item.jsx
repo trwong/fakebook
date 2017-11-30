@@ -5,11 +5,20 @@ import CommentContainer from './../comment/comment_container.jsx';
 class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   body: this.props.post.body
-    // };
+    // TODO refactor state
+    this.state = {
+      body: this.props.post.body,
+      id: this.props.post.id,
+      author_id: this.props.post.author_id,
+      recipient_id: this.props.post.recipient_id,
+      created_at: this.props.post.created_at,
+      comments: this.props.post.comments,
+    };
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.toggleBodyEdit = this.toggleBodyEdit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -20,20 +29,44 @@ class FeedIndexItem extends React.Component {
     }
   }
 
-  handleEdit() {
-
+  handleChange(e) {
+    this.setState({body: e.target.value});
   }
 
-  handleDelete() {
+  handleEdit(e) {
+    e.preventDefault();
+    this.props.editPost(this.state);
+    this.toggleBodyEdit();
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
     this.props.destroyPost(this.props.post.id);
+  }
+
+  toggleBodyEdit() {
+    document.getElementById(`feed-item-post-body-${this.props.post.id}`).classList.toggle("toggle-hide");
+    document.getElementById(`feed-item-form-${this.props.post.id}`).classList.toggle("toggle-hide");
   }
 
   render() {
     const { post, user, users } = this.props;
+    let profilePic;
+    let userId;
+    let userFirstName;
+    let userLastName;
+    if (user) {
+      profilePic = users[user.id].profile_img_url;
+      userId = user.id;
+      userFirstName = user.first_name;
+      userLastName = user.last_name;
+    }
+
     let recipientText;
     if (this.props.recipient !== undefined) {
-      let { first_name, last_name, id } = this.props.recipient;
-      recipientText = this.props.recipient ? (
+      let { recipient, currentUser } = this.props;
+      let { first_name, last_name, id } = recipient;
+      recipientText = (recipient && recipient.id !== currentUser.id)   ? (
         <span>
           <i className="fa fa-caret-right feed-item-caret" aria-hidden="true"></i>
           <Link
@@ -55,17 +88,17 @@ class FeedIndexItem extends React.Component {
           <div className="feed-item-header">
             <img 
               className="profile-thumbnail-medium-circle"
-              src={ users[user.id].profile_img_url }
+              src={ profilePic }
               alt="profile picture thumbnail"/>
             <span className="feed-item-header-info">
 
               <span className="feed-item-name-container">
                 <Link
-                  to={`/profile/${user.id}`}
+                  to={`/profile/${userId}`}
                   className="feed-item-profile-link"
                   ><span
                     className="feed-item-profile-name"
-                    >{user.first_name} {user.last_name} </span></Link>
+                    >{userFirstName} {userLastName} </span></Link>
                   {recipientText}
               </span>
               
@@ -76,7 +109,7 @@ class FeedIndexItem extends React.Component {
               aria-hidden="true"></i>
             <div className="feed-item-edit-pop-up">
               <span
-                onClick={this.handleEdit}
+                onClick={this.toggleBodyEdit}
                 className="feed-item-edit-button"
                 >Edit Post</span>
               <span
@@ -89,9 +122,23 @@ class FeedIndexItem extends React.Component {
           <span id={`feed-item-post-body-${post.id}`}>
             {post.body}
           </span>
-          {/* <form action="">
-            <textarea value=""></textarea>
-          </form> */}
+          <form
+            id={`feed-item-form-${post.id}`}
+            className="toggle-hide">
+            <textarea
+              className="feed-item-edit-input"
+              onChange={this.handleChange}
+              value={this.state.body}
+              ></textarea>
+            <div className="feed-item-edit-buttons">
+              <button
+                onClick={this.toggleBodyEdit}
+                >Cancel</button>
+              <button
+                onClick={this.handleEdit}
+                >Done Editing</button>
+            </div>
+          </form>
         </div>
         <CommentContainer postId={post.id}/>
       </div>
