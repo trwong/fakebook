@@ -61,7 +61,7 @@ genderArr = ["male", "female"]
 
 Faker::UniqueGenerator.clear
 i = 0
-20.times do
+30.times do
   faker_name = Faker::GameOfThrones.character
   first_name = faker_name.split.first
   last_name = faker_name.split[1..-1].join
@@ -109,7 +109,7 @@ Friend.create(requestor_id: 4, receiver_id: 6, status: "pending")
 Friend.create(requestor_id: 2, receiver_id: 9, status: "accepted")
 Friend.create(requestor_id: 3, receiver_id: 10, status: "pending")
 
-200.times do
+300.times do
   rand1 = Random.rand(User.all.count) + 1
   rand2 = Random.rand(User.all.count) + 1
   until rand1 != rand2
