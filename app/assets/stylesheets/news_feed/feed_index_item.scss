@@ -105,6 +105,7 @@
   height: 75px;
   font-size: 16px;
   box-sizing: border-box;
+  border: 1px solid rgb(139,139,139);
 }
 
 .feed-item-edit-buttons {
@@ -123,4 +124,23 @@
   bottom: 0;
   left: 0;
   z-index: 4;
+}
+
+.feed-item-edit-cancel-button, .feed-item-edit-done-editing-button {
+  height: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.feed-item-edit-cancel-button {
+  background-color: rgb(246,247,249);
+  border: 1px solid rgb(206,208,212);
+  color: rgb(75,79,86);
+}
+
+.feed-item-edit-done-editing-button {
+  margin-left: 8px;
+  background-color: rgb(69,101,176);
+  color: white
 }

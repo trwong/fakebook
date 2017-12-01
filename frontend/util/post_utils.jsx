@@ -4,7 +4,7 @@ export const getPost = postId => (
   })
 );
 
-// profileId is an option param to only grab posts on a user's profile
+// profileId is an optional param to only grab posts on a user's profile
 export const getPosts = profileId => (
   $.ajax({
     url: `/api/posts`,

@@ -159,9 +159,11 @@ class FeedIndexItem extends React.Component {
               ></textarea>
             <div className="feed-item-edit-buttons">
               <button
+                className="feed-item-edit-cancel-button"
                 onClick={this.toggleBodyEdit}
                 >Cancel</button>
               <button
+                className="feed-item-edit-done-editing-button"
                 onClick={this.handleEdit}
                 >Done Editing</button>
             </div>
