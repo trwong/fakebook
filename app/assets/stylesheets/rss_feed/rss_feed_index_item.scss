@@ -1,0 +1,29 @@
+.rss-feed-index-item {
+ display: flex;
+ justify-content: center;
+ margin-bottom: 10px;
+ height: 37px;
+ overflow: hidden;
+}
+
+.rss-feed-item-anchor-tag {
+  text-decoration: none;
+}
+
+.trending-arrow-icon {
+  height: 16px;
+  width: 16px;
+}
+
+.rss-feed-item-title {
+  font-size: 13px;
+}
+
+.rss-feed-item-description {
+  font-size: 12px;
+  color: black;
+}
+
+.rss-feed-item-right-side {
+  margin-left: 10px;
+}

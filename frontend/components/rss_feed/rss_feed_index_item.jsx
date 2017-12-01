@@ -10,17 +10,23 @@ class RssFeedIndex extends React.Component {
 
     return (
       <div className="rss-feed-index-item">
-        <a 
-          className="rss-feed-item-anchor-tag"
-          href={url}
-          target="_blank">
-          <span
-            className="rss-feed-item-title"
-            >{title}</span>
-          <span
-            className="rss-feed-item-description"
-            >{description}</span>
-        </a>
+        <img
+          className="trending-arrow-icon"
+          src="https://res.cloudinary.com/trwong/image/upload/v1512153608/Screen_Shot_2017-12-01_at_10.38.54_AM_ktkjxr.png"
+          alt="arrow icon"/>
+        <span className="rss-feed-item-right-side">
+          <a 
+            className="rss-feed-item-anchor-tag"
+            href={url}
+            target="_blank">
+            <div
+              className="rss-feed-item-title"
+              >{title}</div>
+            <div
+              className="rss-feed-item-description"
+              >{description}</div>
+          </a>
+        </span>
       </div>
     );
   }

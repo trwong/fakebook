@@ -37,10 +37,10 @@ class RssFeed extends React.Component {
       <div className="rss-feed-container">
         <div className="rss-feed-header">
           Trending
+        </div>
           <RssFeedIndexContainer 
             response={this.state.bbcNews}
             />
-        </div>
 
       </div>
     );
