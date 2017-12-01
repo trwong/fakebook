@@ -13,8 +13,8 @@ User.create(first_name: 'Taylor',
   password: "password",
   birthday: "1993-10-31",
   gender: "male",
-  profile_img_url: "http://res.cloudinary.com/trwong/image/upload/v1511898505/download_1_fduexc.jpg",
-  cover_img_url: "http://res.cloudinary.com/trwong/image/upload/v1511898507/zion_national_park_springdale_utah_05_urgaqg.jpg")
+  profile_img_url: "https://res.cloudinary.com/trwong/image/upload/v1512000606/download_1_ec1e6x.jpg",
+  cover_img_url: "https://res.cloudinary.com/trwong/image/upload/v1511898507/zion_national_park_springdale_utah_05_urgaqg.jpg")
 # User.create(first_name: 'Karim', last_name: 'Key', email: "test1", password: "password", birthday: "1993-10-31", gender: "male")
 # User.create(first_name: 'Jahar', last_name: 'Peele', email: "test2", password: "password", birthday: "1993-10-31", gender: "male")
 # User.create(first_name: 'Bob', last_name: 'Belcher', email: "test3", password: "password", birthday: "1993-10-31", gender: "male")

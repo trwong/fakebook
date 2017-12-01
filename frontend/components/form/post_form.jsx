@@ -24,11 +24,12 @@ class PostForm extends React.Component {
     // set recipient ID if not on news feed or own profile
     // TODO/BUG this should probably live in the handleSubmit func below. Calling this on every
     // mouse stroke is inefficient but it doesn't save data to db while in handleSubmit
-    // MONITOR BUG moved below logic into handleSubmit, works fine for now.
-    // let paramId = this.props.ownProps.match.params.userId;
-    // if (paramId && paramId !== this.props.currentUser.id) {
-    //   this.setState({ recipient_id: paramId });
-    // }
+
+    let paramId = this.props.ownProps.match.params.userId;
+    if (paramId && paramId !== parseInt(this.props.currentUser.id)) {
+      this.setState({ recipient_id: paramId });
+    }
+    this.setState({author_id: parseInt(this.props.currentUser.id)});
   }
 
   handleSubmit(e) {
@@ -40,7 +41,6 @@ class PostForm extends React.Component {
     if (paramId && parseInt(paramId) !== this.props.currentUser.id) {
       this.setState({ recipient_id: paramId });
     }
-    this.setState({author_id: parseInt(this.props.currentUser.id)});
 
     this.props.createPost(this.state);
     document.getElementById('post-form-text-area').value = "";
