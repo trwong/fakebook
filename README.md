@@ -13,8 +13,12 @@ The project was designed and built within a two-week timeframe, though I plan to
 * Search allows users to quickly find friends they may know
 
 ### Post Creation
+
+![profile page screenshot](http://res.cloudinary.com/trwong/image/upload/v1512171240/Screen_Shot_2017-12-01_at_3.30.20_PM_l25pzf.png)
+
 To maintain DRY code, the posts container, including the post form and post index, was used on both the user's news feed and profile. Each page requires a different filtered view of posts. I utilized route information to dictate how the controller would return filtered posts.
 
+```javascript
 componentDidMount() {
     if (this.props.match.params.userId) {
       this.props.fetchPosts(this.props.match.params.userId);
@@ -22,8 +26,12 @@ componentDidMount() {
       this.props.fetchPosts();
     }
   } 
+  ```
 
 ### User Search
+
+![news feed search screenshot](http://res.cloudinary.com/trwong/image/upload/v1512171239/Screen_Shot_2017-12-01_at_3.33.17_PM_pnvfll.png)
+
 While user search was not a MVP, I believe it is a core feature in Fakebook to find and connect with others. Searching fired an Ajax request on input change that used a SQL wildcard search to return a list of users.
 
 
@@ -33,9 +41,9 @@ Fakebook was designed to closely mimic the functionality and look and feel of Fa
 ## Technologies
 
 ### Additional Resources
-* Proposal Wireframes
-* API Endpoints
-* Database Schema
+* [Proposal Wireframes] (https://github.com/trwong/fakebook/wiki/Wireframes)
+* [API Endpoints] (https://github.com/trwong/fakebook/wiki/Routes)
+* [Database Schema] (https://github.com/trwong/fakebook/wiki/Database-Schema)
 
 ## Possible future features
 * Notifications
