@@ -99,8 +99,8 @@ class ProfileDisplay extends React.Component {
         }, () => this.props.updateUser({
             id: parseInt(this.props.currentUser.id),
             profile_img_url: this.state.profile_img_url,
-        })
-      );
+        }));
+      this.props.getCurrentUser(this.props.currentUser.id);
       }
     });
   }
@@ -127,10 +127,10 @@ class ProfileDisplay extends React.Component {
         this.setState({
           cover_img_url: response.body.secure_url
         }, () => this.props.updateUser({
-            id: parseInt(this.props.currentUser.id),
-            cover_img_url: this.state.cover_img_url,
-        })
-      );
+          id: parseInt(this.props.currentUser.id),
+          cover_img_url: this.state.cover_img_url,
+        }));
+        this.props.getCurrentUser(this.props.currentUser.id);
       }
     });
   }
@@ -248,7 +248,8 @@ class ProfileDisplay extends React.Component {
           <img
             onClick={this.handleCoverPicClick}
             className="profile-cover-image"
-            src={profileUser.cover_img_url}
+            // src={profileUser.cover_img_url}
+            src={this.props.users[this.props.currentUser.id].cover_img_url}
             alt="user cover picture"
             />
           <Dropzone
@@ -264,7 +265,8 @@ class ProfileDisplay extends React.Component {
           <img
             onClick={this.handleProfilePicClick}
             className="profile-profile-image"
-            src={profileUser.profile_img_url}
+            // src={profileUser.profile_img_url}
+            src={this.props.users[this.props.currentUser.id].profile_img_url}
             alt="user profile picture"/>
           <Dropzone
             id="profile-picture-file-input"
