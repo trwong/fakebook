@@ -1,0 +1,26 @@
+.friends-container {
+  width: 850px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  border: 1px solid rgb(221,223,226);
+  border-radius: 4px;
+}
+
+.friends-container-header {
+  background-color: rgb(246,247,249);
+  padding: 16px;
+  border-bottom: 1px solid rgb(221,223,226);
+}
+
+.friends-page-header-friend-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 9px;
+}
+
+.friends-page-header-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(75,79,86);
+}

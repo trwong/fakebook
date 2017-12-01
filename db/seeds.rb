@@ -94,5 +94,8 @@ Friend.create(requestor_id: 3, receiver_id: 10, status: "pending")
   until rand1 != rand2
     rand2 = Random.rand(User.all.count) + 1
   end
-  Friend.create(requestor_id: rand1, receiver_id: rand2, status: "accepted")
+
+  unless (Friend.find_by(requestor_id: rand1, receiver_id: rand2) || Friend.find_by(requestor_id: rand2, receiver_id: rand1))
+    Friend.create(requestor_id: rand1, receiver_id: rand2, status: "accepted")
+  end
 end
