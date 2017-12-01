@@ -31,12 +31,14 @@ export default () => (
       <ProtectedRoute
         path="/profile/:userId"
         component={ProfileDisplayContainer} />
-      <Route
-        path="/profile/:userId"
-        component={ProfileContainer} />
-      <ProtectedRoute
-        path="/profile/:userId/friends"
-        component={FriendsContainer} />
+      <Switch>
+        <ProtectedRoute
+          path="/profile/:userId/friends"
+          component={FriendsContainer} />
+        <ProtectedRoute
+          path="/profile/:userId"
+          component={ProfileContainer} />
+      </Switch>
     </div>
   </div>
 );

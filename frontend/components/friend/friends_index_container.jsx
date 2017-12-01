@@ -4,7 +4,8 @@ import FriendsIndex from './friends_index';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.users[ownProps.match.params.userId],
+  profileUser: state.users[ownProps.match.params.userId],
+  users: state.users,
 });
 
 const mapDispatchToProps = dispatch => ({

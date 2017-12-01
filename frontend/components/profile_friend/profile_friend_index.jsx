@@ -9,10 +9,11 @@ class ProfileFriendIndex extends React.Component {
       profileUser: undefined
     };
   }
-// BUG clicking from one profile to another doesn't update friends
+
   componentWillMount() {
     this.props.fetchUsers().then(() => {
-      this.profileUser = this.props.users[this.props.match.params.userId];
+      // this.profileUser = this.props.users[this.props.match.params.userId];
+      this.setState({profileUser: this.props.users[this.props.match.params.userId]});
     });
   }
 
@@ -25,14 +26,15 @@ class ProfileFriendIndex extends React.Component {
     let { users } = this.props;
     // debugger;
     if (this.props.match.params.userId !== newProps.match.params.userId) {
-      this.profileUser = users[newProps.match.params.userId];
+      // this.profileUser = users[newProps.match.params.userId];
+      this.setState({ profileUser: users[newProps.match.params.userId]});
     }
   }
 
   render() {
     let { users } = this.props;
     // let profileUser = users[this.props.match.params.userId];
-    let profileUser = this.profileUser;
+    let profileUser = this.state.profileUser;
     if (profileUser === undefined) {
       return null;
     }
