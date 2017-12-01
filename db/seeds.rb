@@ -88,7 +88,7 @@ Friend.create(requestor_id: 4, receiver_id: 6, status: "pending")
 Friend.create(requestor_id: 2, receiver_id: 9, status: "accepted")
 Friend.create(requestor_id: 3, receiver_id: 10, status: "pending")
 
-150.times do
+200.times do
   rand1 = Random.rand(User.all.count) + 1
   rand2 = Random.rand(User.all.count) + 1
   until rand1 != rand2

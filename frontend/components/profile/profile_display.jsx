@@ -33,13 +33,13 @@ class ProfileDisplay extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    if (this.props.users && this.props.users[this.props.match.params.userId]) {
-      this.setState({
-        id: this.props.match.params.userId,
-        profile_img_url: this.profileUser.profile_img_url,
-        cover_img_url: this.profileUser.cover_img_url,
-      });
-    }
+  //   if (this.props.users && this.props.users[this.props.match.params.userId]) {
+  //     this.setState({
+  //       id: this.props.match.params.userId,
+  //       profile_img_url: this.profileUser.profile_img_url,
+  //       cover_img_url: this.profileUser.cover_img_url,
+  //     });
+  //   }
   }
 
   componentWillReceiveProps(newProps) {

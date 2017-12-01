@@ -5,7 +5,7 @@ class PostForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      author_id: parseInt(this.props.currentUser.id),
+      author_id: undefined,
       recipient_id: undefined,
     };
 
@@ -24,10 +24,11 @@ class PostForm extends React.Component {
     // set recipient ID if not on news feed or own profile
     // TODO/BUG this should probably live in the handleSubmit func below. Calling this on every
     // mouse stroke is inefficient but it doesn't save data to db while in handleSubmit
-    let paramId = this.props.ownProps.match.params.userId;
-    if (paramId && paramId !== this.props.currentUser.id) {
-      this.setState({ recipient_id: paramId });
-    }
+    // MONITOR BUG moved below logic into handleSubmit, works fine for now.
+    // let paramId = this.props.ownProps.match.params.userId;
+    // if (paramId && paramId !== this.props.currentUser.id) {
+    //   this.setState({ recipient_id: paramId });
+    // }
   }
 
   handleSubmit(e) {
@@ -35,9 +36,11 @@ class PostForm extends React.Component {
 
     // set recipient ID if not on news feed or own profile
     let paramId = this.props.ownProps.match.params.userId;
-    if (paramId && paramId !== this.props.currentUser.id) {
+
+    if (paramId && parseInt(paramId) !== this.props.currentUser.id) {
       this.setState({ recipient_id: paramId });
     }
+    this.setState({author_id: parseInt(this.props.currentUser.id)});
 
     this.props.createPost(this.state);
     document.getElementById('post-form-text-area').value = "";
@@ -45,6 +48,9 @@ class PostForm extends React.Component {
   }
 
   render() {
+    if (!this.props.currentUser) {
+      return null;
+    }
     let firstName = this.props.currentUser.first_name;
     let userId = this.props.currentUser.id;
 
