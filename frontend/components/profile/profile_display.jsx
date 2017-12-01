@@ -15,7 +15,6 @@ class ProfileDisplay extends React.Component {
       cover_img_url: "",
     };
 
-    this.profileUser = this.props.users[this.props.match.params.userId];
 
     this.profileImageDrop = this.profileImageDrop.bind(this);
     this.handleProfileImageUpload = this.handleProfileImageUpload.bind(this);
@@ -24,6 +23,12 @@ class ProfileDisplay extends React.Component {
     this.handleProfilePicClick = this.handleProfilePicClick.bind(this);
     this.handleCoverPicClick = this.handleCoverPicClick.bind(this);
     
+  }
+
+  componentWillMount() {
+    this.props.fetchUsers().then(() => {
+      this.profileUser = this.props.users[this.props.match.params.userId];
+    });
   }
 
   componentDidMount() {
@@ -41,7 +46,7 @@ class ProfileDisplay extends React.Component {
     let newUserId = newProps.match.params.userId;
     
     if (newProps.location.pathname !== this.props.location.pathname) {
-      this.props.fetchUser(newProps.match.params.userId);
+      // this.props.fetchUser(newProps.match.params.userId);
       this.profileUser = newProps.users[newProps.match.params.userId];
     }
     // if (newProps.users[newUserId].profile_img_url !==
@@ -228,7 +233,7 @@ class ProfileDisplay extends React.Component {
           <img
             onClick={this.handleCoverPicClick}
             className="profile-cover-image"
-            src={this.state.cover_img_url}
+            src={profileUser.cover_img_url}
             alt="user cover picture"
             />
           <Dropzone
@@ -249,7 +254,7 @@ class ProfileDisplay extends React.Component {
           <img
             onClick={this.handleProfilePicClick}
             className="profile-profile-image"
-            src={this.state.profile_img_url}
+            src={profileUser.profile_img_url}
             alt="user profile picture"/>
           <Dropzone
             id="profile-picture-file-input"

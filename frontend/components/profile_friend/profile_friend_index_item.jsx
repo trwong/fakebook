@@ -7,8 +7,11 @@ class ProfileFriendIndexItem extends React.Component {
   }
 
   render() {
+
     let { user } = this.props;
-    
+    if (user === undefined) {
+      return null;
+    }
     return (
       <div className="profile-friend-index-item">
         <Link

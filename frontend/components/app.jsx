@@ -23,16 +23,15 @@ export default () => (
       <AuthRoute exact path="/" component={HomeNavBarContainer} />
       <Route path="/" component={NavBarContainer} />
     </Switch>
-    <AuthRoute exact path="/" component={SignupContainer} />
+    <ExactAuthRoute path="/" component={SignupContainer} />
     <div className="fakebook-main-body">
       <ProtectedRoute
         path="/feed"
         component={NewsFeed} />
-      {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
       <ProtectedRoute
         path="/profile/:userId"
         component={ProfileDisplayContainer} />
-      <ExactProtectedRoute
+      <Route
         path="/profile/:userId"
         component={ProfileContainer} />
       <ProtectedRoute
@@ -41,3 +40,4 @@ export default () => (
     </div>
   </div>
 );
+{/* <AuthRoute path="/signup" component={SignupContainer} /> */}
