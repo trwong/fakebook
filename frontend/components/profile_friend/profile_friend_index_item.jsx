@@ -14,6 +14,7 @@ class ProfileFriendIndexItem extends React.Component {
     }
     return (
       <div className="profile-friend-index-item">
+      {/* TODO3 add box shadow so white text shows better */}
         <Link
           className="profile-friend-index-link"
           to={`/profile/${user.id}`}>
