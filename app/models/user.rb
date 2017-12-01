@@ -42,7 +42,7 @@ class User < ApplicationRecord
     sql_query = "%" + query + "%"
     User
       .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', sql_query, sql_query)
-      .limit(5)
+      .limit(8)
   end
     
   def all_friends

@@ -4,6 +4,7 @@ import errors from './errors';
 import posts from './posts';
 import users from './users';
 import comments from './comments';
+import search from './search';
 
 export default combineReducers({
   session,
@@ -11,4 +12,5 @@ export default combineReducers({
   posts,
   users,
   comments,
+  search,
 });

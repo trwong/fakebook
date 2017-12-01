@@ -13,6 +13,7 @@ import {
 } from './actions/session';
 import { fetchPosts } from "./actions/post";
 import { fetchUser } from "./actions/user";
+import { searchUsers } from "./actions/search";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -41,4 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchPosts = fetchPosts;
     window.fetchUser = fetchUser;
     window.getCurrentUser = getCurrentUser;
+    window.searchUsers = searchUsers;
 });

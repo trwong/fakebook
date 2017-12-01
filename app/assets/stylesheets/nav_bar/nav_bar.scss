@@ -34,6 +34,7 @@
 .loggedin-nav-left {
   display: flex;
   align-items: center;
+  position: relative;
 };
 
 .loggedin-nav-left > input {
@@ -43,6 +44,8 @@
   border:1px solid rgb(189,199,215);
   padding-left: 10px;
   box-sizing: border-box;
+  z-index: 5;
+
 }
 
 .loggedin-nav-profile-link {
@@ -150,3 +153,69 @@
   left: 0;
   z-index: 4;
 }
+
+.nav-search-result-container {
+  width: 398px;
+  position: absolute;
+  top: 34px;
+  left: 31px;
+  background-color: white;
+  box-shadow: 3px 3px 8px -2px #888888;
+  border-radius: 3px;
+  z-index: 5;
+}
+
+.nav-search-result {
+  
+}
+
+.nav-search-result:hover {
+  background-color: rgb(236,240,247);
+}
+
+.nav-search-results-image {
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+.nav-search-link {
+  text-decoration: none;
+}
+
+.nav-search-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-search-name {
+  margin: 8px 7px;
+  font-size: 15px;
+  color: black;
+}
+
+.nav-search-no-results {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#nav-bar-exit-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  // display: none;
+  // background-color: black;
+}
+
+// .showHiddenExitModal {
+//   display: inline;
+// }

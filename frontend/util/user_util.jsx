@@ -18,7 +18,7 @@ export const patchUser = user => (
   })
 );
 
-export const searchUsers = query => (
+export const filterUsers = query => (
   $.ajax({
     url: "/api/search",
     data: { query }
