@@ -24,25 +24,36 @@ class LeftAside extends React.Component {
             alt="profile image thumbnail"/>
           <span>{first_name} {last_name}</span>
         </div>
-        <div>
+        <div className="news-feed-div-selected">
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
             News Feed
         </div>
         <div>
-          <Link to="https://github.com/trwong/fakebook">
+          <a
+            className="remove-text-decoration"
+            target="_blank"
+            href="https://github.com/trwong/fakebook">
             <i class="fa fa-github" aria-hidden="true"></i>
             Github
-          </Link>
+          </a>
         </div>
         <div>
-          <Link to="https://www.linkedin.com/in/taylor-reed-wong">
+          <a
+            className="remove-text-decoration"
+            target="_blank"
+            href="https://www.linkedin.com/in/taylor-reed-wong">
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
             Linkedin
-          </Link>
+          </a>
         </div>
         <div>
-          <Link to="https://github.com/trwong/">
+          <a
+            className="remove-text-decoration"
+            target="_blank"
+            href="https://github.com/trwong/">
+            <i class="fa fa-code" aria-hidden="true"></i>
             Other Projects
-          </Link>
+          </a>
         </div>
       </div>
     );

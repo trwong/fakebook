@@ -9,8 +9,8 @@
 }
 
 .right-aside-profile-pic-thumbnail {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -24,4 +24,26 @@
 
 .remove-text-decoration {
   text-decoration: none;
+  color: black;
+}
+
+.left-aside-container div:not(:first-child) {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.right-aside-profile-pic-thumbnail {
+  margin-right: 5px;
+}
+
+.left-aside-container i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.news-feed-div-selected {
+  background-color: rgb(246,247,249);
+  border: 1px solid rgb(221,223,226);
+  border-radius: 3px;
+  box-sizing: border-box;
 }
