@@ -9,11 +9,12 @@ class FriendsIndex extends React.Component {
 
   render() {
     let { user } = this.props;
-    
-    let display = (user && user.length > 0) ? (
+
+    let display = (user && user.friends && user.friends.length > 0) ? (
       <div></div>
     ): (
-      <div></div>
+      // TODO2 add styling for no friends
+      <div>No Friends :(</div>
       );
 
     return (

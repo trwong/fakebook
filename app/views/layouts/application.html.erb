@@ -21,7 +21,7 @@
           "last_name": "<%= current_user.last_name %>",
           "profile_img_url": "<%= current_user.profile_img_url %>",
           "cover_img_url": "<%= current_user.cover_img_url %>",
-          "friends": <%= current_user.accepted_friends_ids %>
+          "friends": <%= current_user.accepted_friends_ids %>,
           "friend_requests": <%= current_user.incoming_pending_friends_ids %>
         };
       </script>

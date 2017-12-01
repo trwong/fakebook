@@ -5,11 +5,32 @@ import { Link } from 'react-router-dom';
 class ProfileFriendIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      profileUser: ""
+    };
+  }
+// BUG clicking from one profile to another doesn't update friends
+  componentDidMount() {
+    let { users } = this.props;
+    this.setState({ profileUser: users[this.props.match.params.userId]});
+  }
+
+  componentWillReceiveProps(newProps) {
+    let { users } = this.props;
+    // debugger;
+    if (this.props.match.params.userId !== newProps.match.params.userId) {
+      this.setState({ profileUser: users[newProps.match.params.userId] });
+    }
   }
 
   render() {
     let { users } = this.props;
-    let profileUser = users[this.props.match.params.userId];
+    // let profileUser = users[this.props.match.params.userId];
+    let { profileUser } = this.state;
+    if (!profileUser) {
+      return null;
+    }
+    // debugger;
     let { friends } = profileUser;
     let firstNineFriends;
 

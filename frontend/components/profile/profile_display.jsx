@@ -139,6 +139,8 @@ class ProfileDisplay extends React.Component {
     if (profileUser !== undefined ) {
       profileFirstName = profileUser.first_name;
       profileLastName = profileUser.last_name;
+    } else {
+      return null;
     }
 
     let {
