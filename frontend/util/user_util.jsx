@@ -17,3 +17,10 @@ export const patchUser = user => (
     data: { user },
   })
 );
+
+export const searchUsers = query => (
+  $.ajax({
+    url: "/api/search",
+    data: { query }
+  })
+);

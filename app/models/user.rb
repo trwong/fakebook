@@ -38,6 +38,13 @@ class User < ApplicationRecord
     through: :received_friendships,
     source: :requestor
 
+  def self.searchNames(query)
+    sql_query = "%" + query + "%"
+    User
+      .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', sql_query, sql_query)
+      .limit(5)
+  end
+    
   def all_friends
     self.requested_friends + self.received_friends
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128081422) do
+ActiveRecord::Schema.define(version: 20171201100017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20171128081422) do
     t.string "profile_img_url", default: "https://res.cloudinary.com/trwong/image/upload/v1511818535/600px-Default_profile_picture__male__on_Facebook_wmo7hc.jpg"
     t.string "cover_img_url", default: "https://res.cloudinary.com/trwong/image/upload/v1511820122/black_shop_hotvdp.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["first_name"], name: "index_users_on_first_name"
+    t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 

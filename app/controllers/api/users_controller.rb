@@ -13,6 +13,11 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    @users = User.searchNames(params[:query])
+    render :search
+  end
+
   def index
     @users = User.all
   end

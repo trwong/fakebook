@@ -12,5 +12,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :show, :create, :update, :destroy]
     end
     resources :friends, only: [:index, :pending_requests]
+
+    get 'search', to: 'users#search', as: :search
   end
+
 end
