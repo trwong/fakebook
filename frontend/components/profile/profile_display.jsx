@@ -244,7 +244,7 @@ class ProfileDisplay extends React.Component {
     ) : (
       ""
     );
-    
+    // debugger
     return (
       <div className="profile-display-container">
         <span className="cover-image-container">
@@ -252,7 +252,7 @@ class ProfileDisplay extends React.Component {
             onClick={this.handleCoverPicClick}
             className="profile-cover-image"
             // src={profileUser.cover_img_url}
-            src={this.props.users[this.props.currentUser.id].cover_img_url}
+            src={this.props.users[profileUser.id].cover_img_url}
             alt="user cover picture"
             />
           <Dropzone
@@ -269,7 +269,7 @@ class ProfileDisplay extends React.Component {
             onClick={this.handleProfilePicClick}
             className="profile-profile-image"
             // src={profileUser.profile_img_url}
-            src={this.props.users[this.props.currentUser.id].profile_img_url}
+            src={this.props.users[profileUser.id].profile_img_url}
             alt="user profile picture"/>
           <Dropzone
             id="profile-picture-file-input"
