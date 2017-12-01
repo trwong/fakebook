@@ -96,11 +96,14 @@ class ProfileDisplay extends React.Component {
       if (response.body.secure_url !== '') {
         this.setState({
           profile_img_url: response.body.secure_url
-        }, () => this.props.updateUser({
-            id: parseInt(this.props.currentUser.id),
-            profile_img_url: this.state.profile_img_url,
-        }));
-      this.props.getCurrentUser(this.props.currentUser.id);
+        }, () => {
+            this.props.updateUser({
+              id: parseInt(this.props.currentUser.id),
+              profile_img_url: this.state.profile_img_url,
+            });
+            this.props.getCurrentUser(this.props.currentUser.id);
+          }
+      );
       }
     });
   }

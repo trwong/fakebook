@@ -32,7 +32,7 @@ class CommentForm extends React.Component {
     <div className="comment-form-container">
       <img
         className="profile-thumbnail-small-circle comment-form-profile-thumbnail"
-        src={currentUser.profile_img_url}
+        src={users[currentUser.id].profile_img_url}
         alt="user profile thumbnail"/>
       <form
         className="comment-form-form"
