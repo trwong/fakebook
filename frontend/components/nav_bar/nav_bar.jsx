@@ -74,7 +74,6 @@ class NavBar extends React.Component {
     let notifications;
     // TODO refactor below
     if (this.props.currentUser && Object.keys(this.props.users).length !== 0) {
-      // debugger;
       firstName = this.props.currentUser.first_name;
       userId = this.props.currentUser.id;
       profile_img_url = this.props.users[userId].profile_img_url;
