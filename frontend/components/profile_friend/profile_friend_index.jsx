@@ -53,7 +53,9 @@ class ProfileFriendIndex extends React.Component {
           user={ users[friendId] } />
       ))
     ) : (
-      <div>No Friends :(</div>
+      <div
+        className="profile-friend-index-no-friends-text"
+        >No Friends :(</div>
     );
 
     return (

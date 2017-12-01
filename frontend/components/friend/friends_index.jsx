@@ -19,7 +19,9 @@ class FriendsIndex extends React.Component {
       ))
     ) : (
       // TODO2 add styling for no friends
-      <div>No Friends :(</div>
+      <div
+        className="friends-index-no-friends-text"
+        >No Friends :(</div>
     );
 
     return (
