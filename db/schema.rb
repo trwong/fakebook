@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20171128081422) do
     t.string "last_name", null: false
     t.date "birthday", null: false
     t.string "gender", null: false
-    t.string "profile_img_url", default: "http://res.cloudinary.com/trwong/image/upload/v1511818535/600px-Default_profile_picture__male__on_Facebook_wmo7hc.jpg"
-    t.string "cover_img_url", default: "http://res.cloudinary.com/trwong/image/upload/v1511820122/black_shop_hotvdp.jpg"
+    t.string "profile_img_url", default: "https://res.cloudinary.com/trwong/image/upload/v1511818535/600px-Default_profile_picture__male__on_Facebook_wmo7hc.jpg"
+    t.string "cover_img_url", default: "https://res.cloudinary.com/trwong/image/upload/v1511820122/black_shop_hotvdp.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
