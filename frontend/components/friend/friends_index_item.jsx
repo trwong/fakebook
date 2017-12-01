@@ -34,7 +34,7 @@ class FriendsIndexItem extends React.Component {
 
             <button
               className="friends-index-item-button"
-              ><i class="fa fa-check" aria-hidden="true"></i> Friends</button>
+              ><i className="fa fa-check" aria-hidden="true"></i> Friends</button>
           </div>
         </Link>
       </div>

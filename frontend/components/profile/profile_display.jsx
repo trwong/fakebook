@@ -159,14 +159,11 @@ class ProfileDisplay extends React.Component {
 
     let friendButton;
     let profileUserId = parseInt(match.params.userId);
-    console.log("current user friends", currentUser.friends);
     if (profileUserId === currentUser.id) {
-      console.log("current user's profile");
       // current user's profile
       friendButton = "";
     } else if (currentUser.friends && 
         currentUser.friends.includes(profileUserId)) {
-      console.log("profile user is friend of current user");
       // profile user is friend of current user
       friendButton = (
         <button
@@ -177,7 +174,6 @@ class ProfileDisplay extends React.Component {
       );
     } else if (currentUser.friend_requested && 
         currentUser.friend_requested.includes(profileUserId)) {
-      console.log("current user sent request to profile user");
       // current user sent request to profile user
       friendButton = (
         <button
@@ -187,7 +183,6 @@ class ProfileDisplay extends React.Component {
       );
     } else if (currentUser.friend_requests && 
         currentUser.friend_requests.includes(profileUserId)) {
-      console.log("current user received request from profile user");
       // current user received request from profile user
       friendButton = (
         <div className="profile-respond-friend-request">
@@ -215,7 +210,6 @@ class ProfileDisplay extends React.Component {
         </div>
       );
     } else {
-      console.log("current user and profile user are not friends");
       // current user and profile user are not friends
       friendButton = (
         <button
@@ -226,6 +220,27 @@ class ProfileDisplay extends React.Component {
       );
     }
 
+    let displayProfileUpdate = (currentUser.id === parseInt(match.params.userId)) ? (
+      <span
+        className="profile-fade"
+        onClick={this.handleProfilePicClick}>
+        <i className="fa fa-camera profile-fade-camera" aria-hidden="true"></i>
+        Update Profile Picture
+      </span>
+    ) : (
+      ""
+    );
+
+    let displayCoverUpdate = (currentUser.id === parseInt(match.params.userId)) ? (
+      <span
+        className="cover-fade"
+        onClick={this.handleCoverPicClick}>
+        <i className="fa fa-camera cover-fade-camera" aria-hidden="true"></i>
+        Update Cover Photo
+      </span>
+    ) : (
+      ""
+    );
     
     return (
       <div className="profile-display-container">
@@ -242,12 +257,7 @@ class ProfileDisplay extends React.Component {
               accept="image/*"
               onDrop={this.coverImageDrop}>
           </Dropzone>
-          <span
-            className="cover-fade"
-            onClick={this.handleCoverPicClick}>
-            <i className="fa fa-camera cover-fade-camera" aria-hidden="true"></i>
-            Update Cover Photo
-          </span>
+          { displayCoverUpdate }
         </span>
 
         <span className="profile-image-container">
@@ -262,15 +272,9 @@ class ProfileDisplay extends React.Component {
             accept="image/*"
             onDrop={this.profileImageDrop}>
           </Dropzone>
-          <span
-            className="profile-fade"
-            onClick={this.handleProfilePicClick}>
-            <i className="fa fa-camera profile-fade-camera" aria-hidden="true"></i>
-            Update Profile Picture
-          </span>
+            { displayProfileUpdate }
         </span>
         <span className="profile-user-name">{ profileFirstName } { profileLastName }</span>
-        {/* TODO1 add add friend functionality */}
         {/* <button
           className="profile-add-friend-button uibutton">Add Friend</button> */}
         {friendButton}
