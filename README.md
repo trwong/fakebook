@@ -1,6 +1,6 @@
 # Fakebook
 
-Fakebook, a faithful Facebook clone, is a social networking site to connect with friends. It makes use of a Rails/PostgreSQL backend with React.js and Redux on the frontend.
+Fakebook, a faithful Facebook clone, is a social networking site to connect users with their friends. It makes use of a Rails/PostgreSQL backend with React.js and Redux on the frontend.
 
 The project was designed and built within a two-week timeframe, though I plan to continue adding improvements over time.
 
@@ -10,7 +10,7 @@ The project was designed and built within a two-week timeframe, though I plan to
 * News feed shows users an aggregated view of their friend's activity
 * Profile pages contain relevant posts and allow users to upload profile and cover pictures
 * Users can friend other users to see that user's activity on their news feed
-* Search allows users to quickly find friends they may know
+* Search allows users to quickly find people they may know
 
 ### Post Creation
 
@@ -39,6 +39,9 @@ While user search was not a MVP, I believe it is a core feature in Fakebook to f
 Fakebook was designed to closely mimic the functionality and look and feel of Facebook. With a two-week time period in mind, I prioritized implementing the core set of features. 
 
 ## Technologies
+On the backend, I used Rails for its RESTful architecture and built in relational databases. 
+Redux was used on the frontend to maintain seperate slice of reducers and actions for users, posts, and comments.
+
 
 ### Additional Resources
 * [Proposal Wireframes] (https://github.com/trwong/fakebook/wiki/Wireframes)
