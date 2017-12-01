@@ -8,8 +8,6 @@ class RssFeedIndex extends React.Component {
 
   render() {
     let { response } = this.props;
-    console.log("reponse in index", response);
-    // debugger;
     if (!response) {
       return null;
     }

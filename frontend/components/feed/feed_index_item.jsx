@@ -79,7 +79,6 @@ class FeedIndexItem extends React.Component {
     }
 
     let recipientText;
-    // debugger;
     if (this.props.recipient !== undefined) {
       let { recipient, currentUser } = this.props;
       let { first_name, last_name, id } = recipient;

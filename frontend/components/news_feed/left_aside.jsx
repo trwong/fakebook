@@ -14,7 +14,6 @@ class LeftAside extends React.Component {
     }
 
     let { first_name, last_name, id } = currentUser;
-    // debugger;
     return (
       <div className="left-aside-container">
         <div className="left-aside-profile-info">
@@ -25,7 +24,7 @@ class LeftAside extends React.Component {
           <span>{first_name} {last_name}</span>
         </div>
         <div className="news-feed-div-selected">
-            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            <i className="fa fa-newspaper-o" aria-hidden="true"></i>
             News Feed
         </div>
         <div>
@@ -33,7 +32,7 @@ class LeftAside extends React.Component {
             className="remove-text-decoration"
             target="_blank"
             href="https://github.com/trwong/fakebook">
-            <i class="fa fa-github" aria-hidden="true"></i>
+            <i className="fa fa-github" aria-hidden="true"></i>
             Github
           </a>
         </div>
@@ -42,7 +41,7 @@ class LeftAside extends React.Component {
             className="remove-text-decoration"
             target="_blank"
             href="https://www.linkedin.com/in/taylor-reed-wong">
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            <i className="fa fa-linkedin-square" aria-hidden="true"></i>
             Linkedin
           </a>
         </div>
@@ -51,7 +50,7 @@ class LeftAside extends React.Component {
             className="remove-text-decoration"
             target="_blank"
             href="https://github.com/trwong/">
-            <i class="fa fa-code" aria-hidden="true"></i>
+            <i className="fa fa-code" aria-hidden="true"></i>
             Other Projects
           </a>
         </div>

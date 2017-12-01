@@ -13,21 +13,11 @@ class RssFeed extends React.Component {
     let url = 'https://newsapi.org/v2/top-headlines?' +
               'sources=bbc-news&' +
               'apiKey=5152cd069b9146cf87886241e6a95df9';
-    // let req = new Request(url);
-    // // let bbcNews;
-    // fetch(req)
-    //   .then( response => {
-    //     console.log("promise hell", response.articles);
-        
-    //     this.setState({bbcNews: response.json()});
-    //     // bbcNews = response.json();
-    //   });
 
     this.props.getRSS(url).then( response => this.setState({bbcNews: response}));
     }
     
   render() {
-    console.log("bbc", this.state.bbcNews);
     let { bbcNews } = this.state;
     if (!bbcNews) {
       return null;

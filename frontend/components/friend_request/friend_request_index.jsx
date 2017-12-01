@@ -8,7 +8,6 @@ class FriendRequestIndexItem extends React.Component {
   }
 
   render() {
-    // debugger;
     let { users, currentUser } = this.props;
     let friend_requests;
 

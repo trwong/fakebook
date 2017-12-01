@@ -10,7 +10,6 @@ class FriendRequestIndex extends React.Component {
 
   handleRequest(type) {
     let { patchFriend, destroyFriend, currentUser, getCurrentUser, user } = this.props;
-    // debugger;
     return (type === "confirm") ? (
       () => patchFriend(currentUser.id, user.id, "accepted")
         .then(() => getCurrentUser(currentUser.id))

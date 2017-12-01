@@ -24,7 +24,6 @@ class ProfileFriendIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     let { users } = this.props;
-    // debugger;
     if (this.props.match.params.userId !== newProps.match.params.userId) {
       // this.profileUser = users[newProps.match.params.userId];
       this.setState({ profileUser: users[newProps.match.params.userId]});
@@ -38,7 +37,6 @@ class ProfileFriendIndex extends React.Component {
     if (profileUser === undefined) {
       return null;
     }
-    // debugger;
     let { friends } = profileUser;
     let firstNineFriends;
 
@@ -63,7 +61,7 @@ class ProfileFriendIndex extends React.Component {
         <div className="profile-friend-index-header">
           <Link
             className="profile-friend-link"
-            to="/profile/">
+            to={`/profile/${profileUser.id}/friends}`}>
             <i className="fa fa-users profile-friends-icon" aria-hidden="true"></i>
             <span
               className="profile-friends-header-text"

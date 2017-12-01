@@ -9,7 +9,6 @@ import {
 
 
 const mapStateToProps = state => {
-  // debugger
   return ({
     users: state.users,
     currentUser: state.session.currentUser

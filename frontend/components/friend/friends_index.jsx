@@ -10,7 +10,6 @@ class FriendsIndex extends React.Component {
 
   render() {
     let { profileUser, users } = this.props;
-    // debugger;
     let display = (profileUser && profileUser.friends && profileUser.friends.length > 0) ? (
       profileUser.friends.map( friendId => (
         <FriendsIndexItemContainer
