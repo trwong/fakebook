@@ -100,8 +100,8 @@ class ProfileDisplay extends React.Component {
             this.props.updateUser({
               id: parseInt(this.props.currentUser.id),
               profile_img_url: this.state.profile_img_url,
-            });
-            this.props.getCurrentUser(this.props.currentUser.id);
+            }).then(() => this.props.getCurrentUser(this.props.currentUser.id));
+          // this.props.getCurrentUser(this.props.currentUser.id);
           }
       );
       }

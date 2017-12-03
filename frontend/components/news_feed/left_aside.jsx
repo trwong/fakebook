@@ -19,7 +19,7 @@ class LeftAside extends React.Component {
         <div className="left-aside-profile-info">
           <img
             className="right-aside-profile-pic-thumbnail"
-            src={users[id].profile_img_url}
+            src={currentUser.profile_img_url}
             alt="profile image thumbnail"/>
           <span>{first_name} {last_name}</span>
         </div>

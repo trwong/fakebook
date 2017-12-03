@@ -6,6 +6,7 @@ import { updateComment, destroyComment } from './../../actions/comment';
 const mapStateToProps = state => ({
   posts: state.posts,
   currentUser: state.session.currentUser,
+  users: state.users,
 });
 
 const mapDispatchToProps = dispatch => ({

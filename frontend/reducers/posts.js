@@ -64,7 +64,7 @@ export default (state = _nullState, action) => {
         newState.by_id[postId].comments = [];
       }
 
-      newState.by_id[postId].comments.unshift(action.comment.id);
+      newState.by_id[postId].comments.push(action.comment.id);
       newState.comments[action.comment.id] = action.comment;
       return newState;
 
