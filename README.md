@@ -1,5 +1,7 @@
 # Fakebook
 
+[Live Site](https://afakebook.herokuapp.com/)
+
 Fakebook, a faithful Facebook clone, is a social networking site to connect users with their friends. It makes use of a Rails/PostgreSQL backend with React.js and Redux on the frontend.
 
 The project was designed and built within a two-week timeframe, though I plan to continue adding improvements over time.
