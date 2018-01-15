@@ -49,7 +49,7 @@ class LeftAside extends React.Component {
           <a
             className="remove-text-decoration"
             target="_blank"
-            href="https://github.com/trwong/">
+            href="https://www.taylorrwong.com">
             <i className="fa fa-code" aria-hidden="true"></i>
             Other Projects
           </a>
