@@ -51,7 +51,7 @@ class LeftAside extends React.Component {
             target="_blank"
             href="https://www.taylorrwong.com">
             <i className="fa fa-code" aria-hidden="true"></i>
-            Other Projects
+            Personal Site
           </a>
         </div>
       </div>

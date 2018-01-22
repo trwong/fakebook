@@ -69,7 +69,6 @@ class CommentIndexItem extends React.Component {
     ) : (
         ""
       );
-      // debugger;
     return (
     <div className="comment-index-item">
 

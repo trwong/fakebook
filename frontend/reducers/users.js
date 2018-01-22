@@ -15,7 +15,6 @@ export default (state={}, action) => {
     case RECEIVE_USERS:
       return action.users;
     case RECEIVE_USER || RECEIVE_CURRENT_USER:
-      debugger;
       return merge(newState, action.user);
     default:
       return state;

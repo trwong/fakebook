@@ -244,7 +244,6 @@ class ProfileDisplay extends React.Component {
     ) : (
       ""
     );
-    // debugger
     return (
       <div className="profile-display-container">
         <span className="cover-image-container">

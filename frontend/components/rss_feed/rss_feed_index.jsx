@@ -15,7 +15,7 @@ class RssFeedIndex extends React.Component {
     let display = response.articles.map(article => (
       <RssFeedIndexItemContainer 
         article={article}
-        key={article.publishedAt}/>
+        key={article.publishedAt + article.title}/>
     ));
 
     return (

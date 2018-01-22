@@ -9,4 +9,22 @@
 .rss-feed-header {
   padding-bottom: 12px;
   color: gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rss-feed-title {
+
+}
+
+.rss-feed-header-right i {
+  margin-right: 8px;
+}
+
+.rss-selected {
+  color: blue;
+}
+
+.rss-button:hover {
+  cursor: pointer;
 }

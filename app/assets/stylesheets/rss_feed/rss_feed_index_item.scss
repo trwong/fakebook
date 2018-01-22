@@ -13,6 +13,7 @@
 .trending-arrow-icon {
   height: 16px;
   width: 16px;
+  box-sizing: border-box;
 }
 
 .rss-feed-item-title {
@@ -26,4 +27,5 @@
 
 .rss-feed-item-right-side {
   margin-left: 10px;
+  width: 100%;
 }
