@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render :show
     else
-      p @comment.errors.full_messages
+      # p @comment.errors.full_messages
       render json: @comment.errors.full_messages, status: 422
     end
   end

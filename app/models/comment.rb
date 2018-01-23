@@ -15,4 +15,6 @@ class Comment < ApplicationRecord
     inverse_of: :comments,
     dependent: :destroy
 
+  has_many :likes,
+    as: :likeable
 end
