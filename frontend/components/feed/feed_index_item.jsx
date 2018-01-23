@@ -128,7 +128,7 @@ class FeedIndexItem extends React.Component {
                   {recipientText}
               </span>
               
-              <span>{post.created_at}</span>
+              <span className="feed-item-date-time">{post.created_at}</span>
             </span>
             {showModal}
             <div

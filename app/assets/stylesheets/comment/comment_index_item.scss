@@ -18,7 +18,9 @@
 }
 
 .comment-item-author-name {
-  margin-right: 10px;
+  margin-right: 5px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .comment-index-item {
@@ -31,7 +33,7 @@
 
 .comment-name-body-date {
   // margin-left: 10px;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .comment-item-date {
@@ -86,4 +88,8 @@
 
 .comment-toggle-hide {
   display: none;
+}
+
+[class^='comment-item-body'] {
+  font-size: 13px;
 }

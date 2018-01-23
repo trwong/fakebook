@@ -2,7 +2,7 @@
  display: flex;
  justify-content: center;
  margin-bottom: 10px;
- height: 37px;
+ height: 43px;
  overflow: hidden;
 }
 
@@ -18,11 +18,15 @@
 
 .rss-feed-item-title {
   font-size: 13px;
+  color: #3955a9;
+  font-weight:550;
+  margin-bottom: 2px;
 }
 
 .rss-feed-item-description {
   font-size: 12px;
   color: black;
+  line-height: 1.2;
 }
 
 .rss-feed-item-right-side {
