@@ -18,6 +18,10 @@ class User < ApplicationRecord
     class_name: :Comment,
     dependent: :destroy
 
+  has_many :likes,
+    foreign_key: :liker_id,
+    class_name: :Like
+
 
   # TODO review below 4 associations
   has_many :requested_friendships,

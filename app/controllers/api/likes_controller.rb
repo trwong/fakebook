@@ -1,8 +1,8 @@
-class Api::LikeController < ApplicationController
+class Api::LikesController < ApplicationController
   def index
     @likes = Like.where(
-      likeable_id: params[:likeable_id],
-      likeable_type: params[:likeable_type]
+      likeable_id: params[:like][:likeable_id],
+      likeable_type: params[:like][:likeable_type]
     )
   end
 
@@ -21,10 +21,10 @@ class Api::LikeController < ApplicationController
 
   def destroy
     @like = Like.where(
-      likeable_id: params[:likeable_id],
-      likeable_type: params[:likeable_type],
-      liker_id: params[:liker_id]
-    )
+      likeable_id: params[:like][:likeable_id],
+      likeable_type: params[:like][:likeable_type],
+      liker_id: params[:like][:liker_id]
+    )[0]
     @like.delete
     render json: {}
   end
@@ -32,6 +32,7 @@ class Api::LikeController < ApplicationController
   private
 
   def like_params
+    # debugger
     params.require(:like).permit(:liker_id, :likeable_id, :likeable_type)
   end
 end
