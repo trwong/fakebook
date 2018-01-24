@@ -14,6 +14,10 @@ import {
 import { fetchPosts } from "./actions/post";
 import { fetchUser } from "./actions/user";
 import { searchUsers } from "./actions/search";
+import {
+    createLike,
+    destroyLike,
+} from "./actions/like";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -43,4 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchUser = fetchUser;
     window.getCurrentUser = getCurrentUser;
     window.searchUsers = searchUsers;
+    window.createLike = createLike;
+    window.destroyLike = destroyLike;
 });

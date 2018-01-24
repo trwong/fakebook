@@ -11,6 +11,9 @@ import {
   RECEIVE_USER,
 } from "./../actions/user";
 import merge from 'lodash/merge';
+import {
+  RECEIVE_LIKE,
+} from './../actions/like';
 
 const _nullState = {
   all_ids: [],
@@ -80,6 +83,17 @@ export default (state = _nullState, action) => {
     case RECEIVE_USER:
       newState.users[action.user.id] = action.user;
       return newState;
+
+    case RECEIVE_LIKE:
+      if (action.like.likeable_type === 'Post') {
+        newState.by_id[action.like.likeable_id].current_user_likes = action.like.current_user_likes;
+        newState.by_id[action.like.likeable_id].liker_ids = action.like.liker_ids;
+        newState.by_id[action.like.likeable_id].num_likes = action.like.num_likes;
+      } else if (action.like.likeable_type === "Comment") {
+        console.log("inside receive like reducer, comment if");
+      }
+      return newState;
+
     default:
       return state;
   }
