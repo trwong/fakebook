@@ -25,10 +25,10 @@ class FeedIndexItem extends React.Component {
 
   componentDidMount() {
     let { body, id } = this.props.post;
-    if (body.length < 85) {
-      $(`#feed-item-post-body-${id}`)
-        .addClass("under-eighty-five-characters");
-    }
+    // if (body.length < 85) {
+    //   $(`#feed-item-post-body-${id}`)
+    //     .addClass("under-eighty-five-characters");
+    // }
   }
 
   handleChange(e) {
@@ -145,9 +145,9 @@ class FeedIndexItem extends React.Component {
             </div>
           </div>
           <br />
-          <span id={`feed-item-post-body-${post.id}`}>
+          <div id={`feed-item-post-body-${post.id}`}>
             {post.body}
-          </span>
+          </div>
           <form
             id={`feed-item-form-${post.id}`}
             className="toggle-hide">
@@ -167,6 +167,18 @@ class FeedIndexItem extends React.Component {
                 >Done Editing</button>
             </div>
           </form>
+
+          <div className="feed-item-like-bar">
+            <span className="feed-item-like-bar-like">
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+              Like
+            </span>
+            <span className="feed-item-like-bar-comment">
+              <i class="fa fa-comment-o" aria-hidden="true"></i>
+              Comment
+            </span>
+          </div>
+
           <div
             onClick={this.handleModal}
             className="click-to-hide-modal toggle-hide"
