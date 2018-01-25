@@ -54,6 +54,15 @@ class LeftAside extends React.Component {
             Personal Site
           </a>
         </div>
+        <div>
+          <a
+            className="remove-text-decoration"
+            target="_blank"
+            href="https://trwong.github.io/3dpong/">
+            <i className="fa fa-gamepad" aria-hidden="true"></i>
+            3D Pong
+          </a>
+        </div>
       </div>
     );
   }
