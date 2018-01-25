@@ -120,3 +120,10 @@ Friend.create(requestor_id: 3, receiver_id: 10, status: "pending")
     Friend.create(requestor_id: rand1, receiver_id: rand2, status: "accepted")
   end
 end
+
+User.all.each do |user|
+  10.times do
+    id = Random.rand(Post.all.count) + 1
+    Like.create(liker_id: user.id, likeable_type: 'Post', likeable_id: id)
+  end
+end

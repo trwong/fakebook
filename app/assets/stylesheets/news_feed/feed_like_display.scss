@@ -1,0 +1,24 @@
+.feed-like-display {
+  border-top: 1px solid #dddfe2;
+}
+
+.feed-like-thumb {
+  color: white;
+  background: rgb(0,133,248);
+  margin: 9px 5px 9px 12px;
+  border-radius: 50%;
+  // padding: 0px 13px 15px 2px;
+  // height: 3px;
+  // width: 3px;
+  padding: 3px;
+}
+
+#small-like-thumb {
+  font-size:0.5em;
+}
+
+.num-likes {
+  font-size: 14px;
+  color: #365899;
+  line-height: 150%;
+}

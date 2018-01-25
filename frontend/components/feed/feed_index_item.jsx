@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentContainer from './../comment/comment_container.jsx';
+import FeedLikeDisplayContainer from './feed_like_display_container';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -216,6 +217,7 @@ class FeedIndexItem extends React.Component {
             id={`click-to-hide-modal-${post.id}`}
           ></div>
         </div>
+        <FeedLikeDisplayContainer post={post}/>
         <CommentContainer postId={post.id}/>
       </div>
     );

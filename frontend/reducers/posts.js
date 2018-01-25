@@ -98,7 +98,6 @@ export default (state = _nullState, action) => {
     case REMOVE_LIKE:
     if (action.like.likeable_type === 'Post') {
       newState.by_id[action.like.likeable_id].current_user_likes = false;
-      debugger;
       let i = newState.by_id[action.like.likeable_id].liker_ids.indexOf(action.like.liker_ids);
       newState.by_id[action.like.likeable_id].liker_ids.splice(i, 1);
       newState.by_id[action.like.likeable_id].num_likes -= 1;
