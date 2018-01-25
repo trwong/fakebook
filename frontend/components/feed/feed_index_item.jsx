@@ -137,7 +137,6 @@ class FeedIndexItem extends React.Component {
     ) : (
       ""
     );
-
     return (
       <div className="feed-item-container">
         <div className="feed-comment-divider">
@@ -217,7 +216,7 @@ class FeedIndexItem extends React.Component {
             id={`click-to-hide-modal-${post.id}`}
           ></div>
         </div>
-        <FeedLikeDisplayContainer post={post}/>
+        <FeedLikeDisplayContainer post={post} users={users}/>
         <CommentContainer postId={post.id}/>
       </div>
     );
