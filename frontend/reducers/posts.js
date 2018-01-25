@@ -13,6 +13,7 @@ import {
 import merge from 'lodash/merge';
 import {
   RECEIVE_LIKE,
+  REMOVE_LIKE,
 } from './../actions/like';
 
 const _nullState = {
@@ -93,6 +94,18 @@ export default (state = _nullState, action) => {
         console.log("inside receive like reducer, comment if");
       }
       return newState;
+
+    case REMOVE_LIKE:
+    if (action.like.likeable_type === 'Post') {
+      newState.by_id[action.like.likeable_id].current_user_likes = false;
+      debugger;
+      let i = newState.by_id[action.like.likeable_id].liker_ids.indexOf(action.like.liker_ids);
+      newState.by_id[action.like.likeable_id].liker_ids.splice(i, 1);
+      newState.by_id[action.like.likeable_id].num_likes -= 1;
+    } else if (action.like.likeable_type === "Comment") {
+      console.log("inside remove like reducer, comment if");
+    }
+    return newState;
 
     default:
       return state;

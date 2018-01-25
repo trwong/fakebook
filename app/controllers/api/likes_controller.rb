@@ -12,6 +12,8 @@ class Api::LikesController < ApplicationController
 
   def create
     @like = Like.new(like_params)
+    p "-----------------"
+    p @like
     if @like.save
       render :show
     else
@@ -24,7 +26,10 @@ class Api::LikesController < ApplicationController
       likeable_id: params[:like][:likeable_id],
       likeable_type: params[:like][:likeable_type],
       liker_id: params[:like][:liker_id]
-    )[0]
+      )[0]
+    p "-----------------"
+    p @like
+    # debugger
     @like.delete
     render json: {}
   end

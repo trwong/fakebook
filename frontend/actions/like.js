@@ -19,9 +19,11 @@ const removeLike = like => ({
 
 // thunk action creators
 export const createLike = like => dispatch => {
+  // debugger;
   postLike(like).then( newLike => dispatch(receiveLike(newLike)));
 };
 
 export const destroyLike = like => dispatch => {
-  removeLike(like).then( () => dispatch(removeLike(like)));
+  // debugger;
+  deleteLike(like).then( () => dispatch(removeLike(like)));
 };

@@ -21,14 +21,22 @@ class FeedIndexItem extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.handleModal = this.handleModal.bind(this);
     this.handleModalAndToggle = this.handleModalAndToggle.bind(this);
+    this.toggleLike = this.toggleLike.bind(this);
   }
 
   componentDidMount() {
-    let { body, id } = this.props.post;
+    // increases font size of posts with under 85 characters to mimic FB functionality
+    // let { body, id } = this.props.post;
     // if (body.length < 85) {
     //   $(`#feed-item-post-body-${id}`)
     //     .addClass("under-eighty-five-characters");
     // }
+    
+    let { post } = this.props;
+    if ( post.current_user_likes ) {
+      $(`.feed-item-like-bar-like-${ post.id }`)
+        .addClass("like-selected");
+    }
   }
 
   handleChange(e) {
@@ -63,6 +71,27 @@ class FeedIndexItem extends React.Component {
   handleModalAndToggle() {
     this.handleModal();
     this.toggleBodyEdit();
+  }
+
+  toggleLike() {
+    let { post, createLike, destroyLike, currentUser } = this.props;
+    let like = {};
+    like["liker_id"] = currentUser.id;
+    like["likeable_type"] = 'Post';
+    like["likeable_id"] = post.id;
+    // debugger;
+
+    if ( post.current_user_likes ) {
+      console.log("destroying");
+      destroyLike(like);
+      $(`.feed-item-like-bar-like-${post.id}`)
+      .removeClass("like-selected");
+    } else {
+      createLike(like);
+      console.log("creating");
+      $(`.feed-item-like-bar-like-${post.id}`)
+        .addClass("like-selected");
+    }
   }
 
   render() {
@@ -168,13 +197,15 @@ class FeedIndexItem extends React.Component {
             </div>
           </form>
 
-          <div className="feed-item-like-bar">
-            <span className="feed-item-like-bar-like">
-              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          <div className='feed-item-like-bar'>
+            <span 
+              onClick={this.toggleLike}
+              className={`feed-item-like-bar-like-${post.id}`}>
+              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
               Like
             </span>
             <span className="feed-item-like-bar-comment">
-              <i class="fa fa-comment-o" aria-hidden="true"></i>
+              <i className="fa fa-comment-o" aria-hidden="true"></i>
               Comment
             </span>
           </div>
