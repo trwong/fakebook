@@ -9,6 +9,9 @@ class NavBar extends React.Component {
       query: "",
     //   results: [],
     };
+
+    setInterval(() => this.props.getCurrentUser(this.props.currentUser.id), 2000);
+
     this.handleLogout = this.handleLogout.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.eraseQueryState = this.eraseQueryState.bind(this);

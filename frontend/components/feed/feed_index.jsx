@@ -5,6 +5,9 @@ import FeedIndexItemContainer from "./feed_index_item_container";
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    setInterval( () => this.props.fetchPosts(), 2000);
+    
     // this.state = props;
   }
 
