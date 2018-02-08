@@ -1,6 +1,7 @@
 .right-aside-container {
   margin: 10px 0 0 10px;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 40px;
-  right: calc(50vw - 256px - 334px - 10px);
+  // right: calc(50vw - 256px - 334px - 10px);
 }
