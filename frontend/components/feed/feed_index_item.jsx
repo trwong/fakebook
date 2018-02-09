@@ -23,6 +23,7 @@ class FeedIndexItem extends React.Component {
     this.handleModal = this.handleModal.bind(this);
     this.handleModalAndToggle = this.handleModalAndToggle.bind(this);
     this.toggleLike = this.toggleLike.bind(this);
+    this.handleComment = this.handleComment.bind(this);
   }
 
   componentDidMount() {
@@ -95,12 +96,15 @@ class FeedIndexItem extends React.Component {
     }
   }
 
+  handleComment() {
+    let { id } = this.state;
+    document.getElementById(`comment-form-input-${ id }`).focus();
+    document.getElementById(`comment-form-input-${ id }`).select();
+  }
+
   render() {
     const { post, user, users } = this.props;
-    let profilePic;
-    let userId;
-    let userFirstName;
-    let userLastName;
+    let profilePic, userId, userFirstName, userLastName;
     if (user) {
       profilePic = users[user.id].profile_img_url;
       userId = user.id;
@@ -204,7 +208,9 @@ class FeedIndexItem extends React.Component {
               <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
               Like
             </span>
-            <span className="feed-item-like-bar-comment">
+            <span
+              onClick={ this.handleComment }
+              className="feed-item-like-bar-comment">
               <i className="fa fa-comment-o" aria-hidden="true"></i>
               Comment
             </span>

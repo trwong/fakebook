@@ -39,6 +39,7 @@ class CommentForm extends React.Component {
         className="comment-form-form"
         onSubmit={this.handleSubmit}>
         <input 
+          id={`comment-form-input-${postId}`}
           className="comment-form-input"
           type="text"
           onChange={this.handleChange}
