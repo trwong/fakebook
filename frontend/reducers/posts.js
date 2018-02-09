@@ -91,7 +91,6 @@ export default (state = _nullState, action) => {
         newState.by_id[action.like.likeable_id].liker_ids = action.like.liker_ids;
         newState.by_id[action.like.likeable_id].num_likes = action.like.num_likes;
       } else if (action.like.likeable_type === "Comment") {
-        console.log("inside receive like reducer, comment if");
       }
       return newState;
 
@@ -102,7 +101,6 @@ export default (state = _nullState, action) => {
       newState.by_id[action.like.likeable_id].liker_ids.splice(i, 1);
       newState.by_id[action.like.likeable_id].num_likes -= 1;
     } else if (action.like.likeable_type === "Comment") {
-      console.log("inside remove like reducer, comment if");
     }
     return newState;
 

@@ -49,16 +49,7 @@ class FeedLikeDisplay extends React.Component {
         );
         break;
         
-      // case 4:
-      //   display = (
-      //     <span>
-      //       {`${this.getName(liker_ids[0])}, ${this.getName(liker_ids[1])}, and 1 other`}
-      //     </span>
-      //   );
-      //   break;
-        
       default:
-        // debugger;
         display = (
           <span>
             {`${this.getName(liker_ids[0])}, ${this.getName(liker_ids[1])}, and ${num_likes - 2} others`}
@@ -68,21 +59,6 @@ class FeedLikeDisplay extends React.Component {
         
     }
 
-
-    // if (num_likes === 0) {
-    //   return null;
-    // } else if (num_likes === 1) {
-      
-    // } else if (num_likes === 2) {
-
-    // } else if (num_likes === 3) {
-
-    // } else if (num_likes === 4) {
-
-    // } else if (num_likes >= 5) {
-
-    // }
-
     return (
       <div className="feed-like-display">
         <i
@@ -91,7 +67,6 @@ class FeedLikeDisplay extends React.Component {
           aria-hidden="true"></i>
         <span className="num-likes">
           { display }
-          {/* {`${num_likes}`} */}
         </span>
       </div>
     );

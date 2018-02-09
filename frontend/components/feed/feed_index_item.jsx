@@ -81,16 +81,13 @@ class FeedIndexItem extends React.Component {
     like["liker_id"] = currentUser.id;
     like["likeable_type"] = 'Post';
     like["likeable_id"] = post.id;
-    // debugger;
 
     if ( post.current_user_likes ) {
-      console.log("destroying");
       destroyLike(like);
       $(`.feed-item-like-bar-like-${post.id}`)
       .removeClass("like-selected");
     } else {
       createLike(like);
-      console.log("creating");
       $(`.feed-item-like-bar-like-${post.id}`)
         .addClass("like-selected");
     }
