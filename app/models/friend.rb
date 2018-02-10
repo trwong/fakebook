@@ -3,7 +3,6 @@ class Friend < ApplicationRecord
   validates :requestor_id, uniqueness: { scope: :receiver_id }
   validates :status, inclusion: { in: %w(pending accepted denied) }
   
-  # TODO review below associations
   belongs_to :requestor,
     primary_key: :id,
     foreign_key: :requestor_id,

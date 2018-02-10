@@ -6,7 +6,7 @@ class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    setInterval( () => this.props.fetchPosts(), 2000);
+    setInterval( () => this.props.fetchPosts(), 3000);
     
     // this.state = props;
   }

@@ -22,8 +22,6 @@ class User < ApplicationRecord
     foreign_key: :liker_id,
     class_name: :Like
 
-
-  # TODO review below 4 associations
   has_many :requested_friendships,
     primary_key: :id,
     foreign_key: :requestor_id,
@@ -43,7 +41,7 @@ class User < ApplicationRecord
     source: :requestor
 
   def self.searchNames(query)
-    sql_query = "%" + query + "%"
+    sql_query = "%" + query.downcase + "%"
     User
       .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', sql_query, sql_query)
       .limit(8)
@@ -59,7 +57,7 @@ class User < ApplicationRecord
 
   def outgoing_pending_friends_ids
     outgoing_pending_friends
-      .map{ |friend| friend.id }
+      .map { |friend| friend.id }
   end
 
   def incoming_pending_friends
@@ -70,7 +68,7 @@ class User < ApplicationRecord
     incoming_pending_friends
       .sort_by{ |friend| friend.created_at }
       .reverse
-      .map{ |friend| friend.id }
+      .map { |friend| friend.id }
   end
 
   def accepted_friends
@@ -79,7 +77,7 @@ class User < ApplicationRecord
   end
 
   def accepted_friends_ids
-    accepted_friends.map{ |friend| friend.id }
+    accepted_friends.map { |friend| friend.id }
   end
 
   def denied_friends
