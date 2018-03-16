@@ -113,8 +113,8 @@ class FeedIndexItem extends React.Component {
     if (this.props.recipient !== undefined) {
       let { recipient, currentUser } = this.props;
       let { first_name, last_name, id } = recipient;
-      // recipientText = (recipient && recipient.id !== currentUser.id)   ? (
-      recipientText = (recipient)   ? (
+      recipientText = (recipient && recipient.id !== currentUser.id)   ? (
+      // recipientText = (recipient)   ? (
         <span>
           <i className="fa fa-caret-right feed-item-caret" aria-hidden="true"></i>
           <Link
